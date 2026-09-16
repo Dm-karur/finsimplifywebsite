@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "./typography.css";
+@import "./globals.css";
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+
+  --color-surface: var(--color-surface);
+  --color-surface-elevated: var(--color-surface-elevated);
+  --color-surface-muted: var(--color-surface-muted);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-on-primary: var(--color-text-on-primary);
+  --color-text-on-secondary: var(--color-text-on-secondary);
+
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-strong: var(--color-border-strong);
+
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-active: var(--color-primary-active);
+  --color-secondary-hover: var(--color-secondary-hover);
+  --color-secondary-active: var(--color-secondary-active);
+
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --spacing-container: var(--spacing-container);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-full: var(--radius-full);
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  /* Badge utilities */
+  .finovate-badge {
+    @apply h-12 w-12 rounded-full flex items-center justify-center transition-all duration-300 bg-surface-muted text-primary;
+  }
+
+  .group-hover\:finovate-badge-active {
+    @apply bg-primary text-text-on-primary shadow-lg scale-110;
+  }
+
+  /* Custom Hover Effects for Blog Cards */
+  .blog-card-hover {
+    @apply transition-colors duration-500 ease-in-out;
+  }
+  .blog-card-hover:hover {
+    @apply bg-secondary border-secondary;
+  }
+  .blog-card-hover:hover h3,
+  .blog-card-hover:hover p,
+  .blog-card-hover:hover span {
+    @apply text-primary transition-colors duration-300;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

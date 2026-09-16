@@ -1,0 +1,72 @@
+import { useState } from 'react';
+
+export default function WhoWeAre() {
+  const [activeTab, setActiveTab] = useState('01');
+
+  const tabContent = {
+    '01': "We're a staff of smart, friendly professionals dedicated to anticipating your needs and making your life easier.",
+    '02': "Our purpose is clear—empowering clients to streamline, protect, and grow the wealth they've diligently built.",
+    '03': "Content for 03 will be provided by the user shortly."
+  };
+
+  return (
+    <section className="bg-surface py-20 lg:py-32 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+          
+          {/* Left Column */}
+          <div className="flex-[1.3] animate-fade-in-up w-full">
+            <div className="inline-block border border-border rounded-full px-5 py-2 mb-8 shadow-sm">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-secondary">
+                Who We Are
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] text-primary font-['Work_Sans',sans-serif] font-medium mb-12 tracking-tight max-w-4xl">
+              Founded by Industry <br className="hidden lg:block" />
+              Trailblazers who Continue to <br className="hidden lg:block" />
+              <span className="text-secondary">Lead the Way.</span>
+            </h2>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-primary text-text-on-primary px-8 py-3.5 rounded-full font-medium hover:bg-primary-hover transition-colors shadow-md text-sm">
+                Learn More
+              </button>
+              <button className="bg-transparent border border-border-strong text-primary px-8 py-3.5 rounded-full font-medium hover:bg-surface-muted transition-colors shadow-sm text-sm">
+                Our Philosophy
+              </button>
+            </div>
+          </div>
+          
+          {/* Right Column */}
+          <div className="flex-[0.7] w-full animate-fade-in-up animation-delay-200 mt-10 lg:mt-0 lg:pl-10">
+            {/* Tabs Row */}
+            <div className="flex gap-6 mb-10">
+              {['01', '02', '03'].map((tab) => (
+                <button 
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`pb-2 text-sm transition-all border-b-[2px] ${
+                    activeTab === tab 
+                      ? 'border-secondary text-primary font-medium' 
+                      : 'border-border text-text-muted hover:text-primary hover:border-border-strong'
+                  } w-8 text-center`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+            
+            {/* Tab Content */}
+            <div className="min-h-[140px]">
+              <p className="text-xl lg:text-[22px] text-text-secondary leading-[1.6] font-['Work_Sans',sans-serif] animate-fade-in-up">
+                {tabContent[activeTab]}
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  );
+}

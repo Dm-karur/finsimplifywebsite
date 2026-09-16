@@ -1,0 +1,53 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #02153D;
+  --color-secondary: #70B650;
+
+  /* Surface Colors */
+  --color-background: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-muted: #F3F4F6; /* Light gray for muted */
+
+  /* Text Colors */
+  --color-text-primary: #02153D; /* Deep Navy for readable text */
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #9CA3AF;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-on-secondary: #FFFFFF;
+
+  /* Border Colors */
+  --color-border: #E5E7EB;
+  --color-border-subtle: #F3F4F6;
+  --color-border-strong: #D1D5DB;
+
+  /* Interactive States */
+  --color-primary-hover: #03215D;
+  --color-primary-active: #010E29;
+  --color-secondary-hover: #5D9941;
+  --color-secondary-active: #4B7B34;
+
+  /* Semantic Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Typography */
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-container: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+}
+
+/* Dark Mode Placeholder */
+@media (prefers-color-scheme: dark) {
+  /* To be implemented later using semantic mappings */
+}
