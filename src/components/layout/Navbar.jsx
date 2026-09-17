@@ -11,39 +11,28 @@ const navigationItems = [
     hasDropdown: false
   },
   {
-    label: "About Us",
-    path: "/about",
-    hasDropdown: true,
-    items: [
-      { label: "Our Story", path: "/about" },
-      { label: "Our Mission", path: "/about" },
-      { label: "Our Values", path: "/about" },
-      { label: "Our Team", path: "/about" }
-    ]
-  },
-  {
     label: "Services",
     path: "/services",
     hasDropdown: true,
     items: [
-      { label: "Financial Planning", path: "/services" },
-      { label: "Investment Solutions", path: "/services" },
-      { label: "Financial Advisory", path: "/services" },
-      { label: "Tax & Planning", path: "/services" },
-      { label: "Business Solutions", path: "/services" }
+      { label: "CFO & Finance Operations", path: "/services/cfo-operations" },
+      { label: "Accounting & Compliance", path: "/services/accounting-compliance" },
+      { label: "Payroll Management", path: "/services/payroll-management" },
+      { label: "Accounts Payable (AP)", path: "/services/accounts-payable" },
+      { label: "Accounts Receivable (AR)", path: "/services/accounts-receivable" },
+      { label: "Business Setup & Incorporation", path: "/services/business-setup" },
+      { label: "All Services", path: "/services", isHighlighted: true }
     ]
   },
   {
-    label: "Blog",
+    label: "About Us",
+    path: "/about",
+    hasDropdown: false
+  },
+  {
+    label: "Blogs",
     path: "/blog",
-    hasDropdown: true,
-    items: [
-      { label: "All Articles", path: "/blog" },
-      { label: "Finance", path: "/blog" },
-      { label: "Investing", path: "/blog" },
-      { label: "Business", path: "/blog" },
-      { label: "Insights", path: "/blog" }
-    ]
+    hasDropdown: false
   },
   {
     label: "Contact",
@@ -206,25 +195,39 @@ export default function Navbar() {
 
                   {/* DROPDOWN MENU */}
                   {item.hasDropdown && activeDropdown === item.label && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-surface rounded-2xl shadow-xl border border-border-subtle overflow-hidden animate-dropdown">
-                      {item.items.map((subItem, idx) => {
-                        return (
-                          <Link
-                            key={idx}
-                            to={subItem.path}
-                            className="flex items-center justify-between px-6 py-4 text-body font-medium transition-colors group text-primary hover:bg-secondary hover:text-primary"
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            {subItem.label}
-                            <div className="w-6 h-6 rounded-full bg-primary text-text-on-primary flex items-center justify-center transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100">
-                              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                              </svg>
-                            </div>
-                          </Link>
-                        );
-                      })}
+                    <div className="absolute top-[120%] left-1/2 -translate-x-1/2 w-[280px] bg-surface rounded-[1.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] overflow-hidden animate-dropdown">
+                      <div className="py-2">
+                        {item.items.map((subItem, idx) => {
+                          if (subItem.isHighlighted) {
+                            return (
+                              <Link
+                                key={idx}
+                                to={subItem.path}
+                                className="flex items-center justify-between px-6 py-4 bg-secondary text-primary font-medium hover:bg-[#c2d829] transition-colors group mt-2"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                {subItem.label}
+                                <div className="w-6 h-6 rounded-full bg-primary text-secondary flex items-center justify-center transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all">
+                                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                  </svg>
+                                </div>
+                              </Link>
+                            );
+                          }
+                          return (
+                            <Link
+                              key={idx}
+                              to={subItem.path}
+                              className="block px-6 py-2 text-[15px] font-medium text-primary hover:bg-secondary hover:text-primary transition-colors"
+                              onClick={() => setActiveDropdown(null)}
+                            >
+                              {subItem.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
                   )}
                 </div>

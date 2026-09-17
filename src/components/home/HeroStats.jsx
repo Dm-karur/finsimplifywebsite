@@ -1,10 +1,10 @@
 export default function HeroStats() {
   return (
     <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 -mt-20 lg:-mt-28 mb-20">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 h-auto lg:h-[220px]">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr_1fr] gap-4 lg:gap-5 h-auto lg:h-[220px]">
         
-        {/* Card 1: Assets (Col Span 5) */}
-        <div className="lg:col-span-5 bg-surface-muted rounded-[2rem] p-3 shadow-xl border border-border flex flex-col md:flex-row gap-3 animate-fade-in-up h-[220px]">
+        {/* Card 1: Assets */}
+        <div className="bg-surface-muted rounded-[2rem] p-3 shadow-xl border border-border flex flex-col md:flex-row gap-3 animate-fade-in-up h-[220px]">
           {/* Left: Text Box */}
           <div className="w-[30%] flex flex-col justify-between p-3">
             <h3 className="text-2xl text-primary font-display font-medium">Assets</h3>
@@ -43,8 +43,8 @@ export default function HeroStats() {
           </div>
         </div>
 
-        {/* Card 2: Professionals (Col Span 4) */}
-        <div className="lg:col-span-4 bg-surface-muted rounded-[2rem] p-3 shadow-xl border border-border animate-fade-in-up animation-delay-100 h-[220px]">
+        {/* Card 2: Professionals */}
+        <div className="bg-surface-muted rounded-[2rem] p-3 shadow-xl border border-border animate-fade-in-up animation-delay-100 h-[220px]">
           {/* Inner White Box */}
           <div className="bg-surface rounded-2xl w-full h-full p-5 lg:p-6 flex flex-col justify-between shadow-sm border border-border/50">
             <div className="text-primary">
@@ -67,12 +67,12 @@ export default function HeroStats() {
           </div>
         </div>
 
-        {/* Card 3: Trust (Col Span 3) */}
-        <div className="lg:col-span-3 bg-surface rounded-[2rem] p-3 shadow-xl border border-border animate-fade-in-up animation-delay-200 relative h-[220px] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Client Trust" className="absolute inset-0 w-full h-full object-cover" />
+        {/* Card 3: Trust */}
+        <div className="bg-surface rounded-[2rem] shadow-xl border border-border animate-fade-in-up animation-delay-200 relative h-[220px] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80" alt="Client Trust" className="absolute inset-0 w-full h-full object-cover" />
           
           {/* Inner Light Card */}
-          <div className="absolute top-3 left-3 bottom-3 w-[65%] bg-[#EBEBE8]/95 backdrop-blur-md rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+          <div className="absolute top-3 left-3 bottom-3 w-[65%] bg-[#EBEBE8]/95 backdrop-blur-md rounded-[1.5rem] p-5 flex flex-col justify-between shadow-sm">
              <div className="text-primary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <rect x="4" y="14" width="4" height="6" rx="1"></rect>

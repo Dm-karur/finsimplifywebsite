@@ -1,11 +1,11 @@
 export default function HeroSection() {
   return (
-    <section className="bg-surface pt-20 lg:pt-32 pb-0 overflow-hidden">
+    <section className="bg-surface pt-10 lg:pt-16 pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Top Content Row */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-16 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl lg:text-[5rem] leading-[1.05] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight w-full lg:w-auto shrink-0">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-10 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.05] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight w-full lg:w-auto shrink-0">
             Investing For <br />
             <span className="whitespace-nowrap">Tomorrow, <span className="text-secondary">Together</span></span>
           </h1>
@@ -29,7 +29,7 @@ export default function HeroSection() {
       </div>
 
       {/* Full Width Image Section */}
-      <div className="relative w-full h-[400px] lg:h-[600px] animate-fade-in-up animation-delay-200">
+      <div className="relative w-full h-[300px] lg:h-[450px] animate-fade-in-up animation-delay-200">
         <img
           src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Business Team Meeting"

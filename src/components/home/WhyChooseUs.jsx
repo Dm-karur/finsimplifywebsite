@@ -1,113 +1,82 @@
-import React, { useEffect, useRef, useState } from 'react';
-
-const AnimatedText = ({ text, highlight = false, delayOffset = 0 }) => {
-  const [inView, setInView] = useState(false);
-  const textRef = useRef(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
-      },
-      { threshold: 0.1 }
-    );
-    if (textRef.current) observer.observe(textRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <span ref={textRef} className={`inline-block ${highlight ? 'bg-secondary px-3 py-0.5 rounded-lg leading-tight' : 'leading-tight'}`}>
-      {text.split('').map((char, index) => (
-        <span 
-          key={index} 
-          className="inline-block transition-all duration-[400ms] ease-out"
-          style={{ 
-            opacity: inView ? 1 : 0, 
-            transform: inView ? 'translateY(0)' : 'translateY(15px)',
-            transitionDelay: `${delayOffset + (index * 40)}ms` 
-          }}
-        >
-          {char === ' ' ? '\u00A0' : char}
-        </span>
-      ))}
-    </span>
-  );
-};
-
 export default function WhyChooseUs() {
-  const sectionRef = useRef(null);
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    let animationFrameId;
-
-    const handleScroll = () => {
-      animationFrameId = requestAnimationFrame(() => {
-        if (!sectionRef.current || !cardRef.current) return;
-        const rect = sectionRef.current.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        // Check if section is in viewport
-        if (rect.top <= viewportHeight && rect.bottom >= 0) {
-          // Calculate progress: 0 when just entering bottom, 1 when just leaving top
-          const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-          
-          // Parallax offset: moves from -100px to +100px as you scroll down
-          const maxOffset = 120;
-          const translateY = (progress - 0.5) * maxOffset * 2;
-          
-          // Apply transform directly using translate3d for hardware acceleration
-          cardRef.current.style.transform = `translate3d(0, ${translateY}px, 0)`;
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
+  const services = [
+    "Financial Planning",
+    "Investment Management",
+    "Insurance & Risk Management",
+    "Alternative Investments"
+  ];
 
   return (
-    <section 
-      ref={sectionRef} 
-      className="relative min-h-[600px] h-[80vh] w-full bg-cover bg-center bg-no-repeat flex items-center justify-center lg:justify-start lg:pl-[6%]"
-      style={{ backgroundImage: `url('/Whychooseus.webp')` }}
-    >
-      {/* Container for the floating card */}
-      <div 
-        ref={cardRef}
-        className="w-[92%] max-w-[550px] bg-[#F6F6F3] rounded-[2.5rem] p-8 lg:p-12 shadow-2xl relative z-10 will-change-transform"
-      >
-        {/* Top Header */}
-        <div className="flex justify-between items-center mb-10">
-          <span className="border border-gray-300 text-text-secondary text-[11px] font-bold uppercase tracking-[0.2em] px-5 py-2 rounded-full">
-            WHY US?
-          </span>
-          <div className="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center text-2xl font-black mt-[-5px] mr-[-5px]">
-            *
-          </div>
-        </div>
+    <section className="bg-surface py-24 lg:py-32">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Animated Main Title */}
-        <h2 className="text-[2rem] lg:text-[2.6rem] text-primary font-medium font-['Work_Sans',sans-serif] mb-14 flex flex-col items-start gap-2">
-          <AnimatedText text="You'll Know What" delayOffset={0} />
-          <AnimatedText text="Steps to Take Next" highlight={true} delayOffset={700} />
-        </h2>
-        
-        {/* Bottom Action Row */}
-        <div className="flex justify-between items-center pt-2">
-          <p className="text-xs lg:text-[13px] font-semibold text-text-secondary leading-[1.6] max-w-[180px]">
-            We are Transparent Like that. No Gimmicks.
-          </p>
+        {/* Top Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 lg:gap-20 mb-16 animate-fade-in-up">
           
-          <button className="bg-primary text-white text-xs lg:text-sm font-bold px-8 py-4 rounded-full hover:bg-primary-hover transition-colors shadow-lg whitespace-nowrap">
-            Schedule a Call
-          </button>
+          {/* Left Column */}
+          <div className="flex-1">
+            <div className="inline-block border border-border rounded-full px-5 py-2 mb-8 shadow-sm">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-secondary">
+                WHY US
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] text-primary font-['Work_Sans',sans-serif] font-normal tracking-tight mb-10">
+              We Always Put <span className="text-secondary">Your <br />
+              Interests</span> First
+            </h2>
+
+            <div className="flex gap-2 items-center">
+              <button className="bg-primary text-white text-[13px] font-semibold px-7 py-3.5 rounded-full hover:bg-primary-hover transition-colors shadow-md">
+                Free Consultation
+              </button>
+              <button className="bg-primary hover:bg-primary-hover text-secondary w-[46px] h-[46px] rounded-full flex items-center justify-center transition-colors shadow-md">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          {/* Right Column */}
+          <div className="flex-[0.8] lg:pb-4 flex flex-col items-start">
+            <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-primary mb-6 shadow-sm">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                <circle cx="12" cy="12" r="5" fill="var(--color-primary)" opacity="0.2"/>
+              </svg>
+            </div>
+            <p className="text-base lg:text-[16px] text-text-muted leading-relaxed font-normal">
+              Driven by a relentless focus on "why," we integrate our services to uncover, design, and deliver the most impactful outcomes for you. Instead of relying on predefined processes, we take a hands-on approach—collaborating closely with your teams to craft practical, end-to-end solutions tailored to your needs.
+            </p>
+          </div>
+          
         </div>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-border-subtle my-16"></div>
+
+        {/* Bottom Section - Buttons Row */}
+        <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-200">
+          {services.map((service, index) => (
+            <button 
+              key={index}
+              className="group flex items-center gap-4 bg-[#F9F9F8] hover:bg-secondary transition-colors duration-300 px-2 py-2 pr-2 pl-6 rounded-full"
+            >
+              <span className="text-[15px] font-medium text-primary">
+                {service}
+              </span>
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-secondary shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </button>
+          ))}
+        </div>
+        
       </div>
     </section>
   );

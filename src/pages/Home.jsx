@@ -9,8 +9,6 @@ import TrustedPartner from '../components/home/TrustedPartner';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import LatestBlogs from '../components/home/LatestBlogs';
 import FAQSection from '../components/home/FAQSection';
-import ContactSection from '../components/home/ContactSection';
-import Footer from '../components/layout/Footer';
 
 export default function Home() {
   return (
@@ -26,8 +24,6 @@ export default function Home() {
       <TestimonialsSection />
       <LatestBlogs />
       <FAQSection />
-      <ContactSection />
-      <Footer />
     </>
   );
 }

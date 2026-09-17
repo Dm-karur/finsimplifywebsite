@@ -99,26 +99,51 @@ export default function TestimonialsSection() {
         </div>
         
         {/* Bottom Logo Strip */}
-        <div className="border-t border-gray-200 pt-10 mt-10">
-          <div className="flex flex-wrap items-center justify-between gap-8 opacity-70 hover:opacity-100 transition-opacity duration-300">
-            {logos.map((logo, index) => (
-              <div key={index} className="flex items-center gap-2 text-[1.1rem] font-bold text-primary tracking-wide">
-                {/* Adding a generic house/building SVG to KONSTRUKTION just for flavor */}
-                {logo === 'KONSTRUKTION' && (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-4a2 2 0 012-2h2a2 2 0 012 2v4" />
-                  </svg>
-                )}
-                <span className={
-                  logo === 'Savex Bank' ? "font-serif" : 
-                  logo === 'Meta Mex' ? "font-['Work_Sans',sans-serif]" : 
-                  logo === 'HEX Fond' ? "font-serif tracking-wider" : 
-                  ""
-                }>
-                  {logo}
-                </span>
-              </div>
-            ))}
+        <div className="border-t border-gray-200 pt-10 mt-10 overflow-hidden relative">
+          {/* Gradient masks for smooth fading on the edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+          
+          <div className="flex w-max animate-marquee hover:opacity-100 opacity-70 transition-opacity duration-300">
+            {/* First Set */}
+            <div className="flex items-center gap-16 lg:gap-24 px-8 lg:px-12">
+              {logos.map((logo, index) => (
+                <div key={index} className="flex items-center gap-2 text-[1.1rem] font-bold text-primary tracking-wide whitespace-nowrap">
+                  {logo === 'KONSTRUKTION' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-4a2 2 0 012-2h2a2 2 0 012 2v4" />
+                    </svg>
+                  )}
+                  <span className={
+                    logo === 'Savex Bank' ? "font-serif" : 
+                    logo === 'Meta Mex' ? "font-['Work_Sans',sans-serif]" : 
+                    logo === 'HEX Fond' ? "font-serif tracking-wider" : ""
+                  }>
+                    {logo}
+                  </span>
+                </div>
+              ))}
+            </div>
+            
+            {/* Second Set (Duplicate for seamless scroll) */}
+            <div className="flex items-center gap-16 lg:gap-24 px-8 lg:px-12" aria-hidden="true">
+              {logos.map((logo, index) => (
+                <div key={`dup-${index}`} className="flex items-center gap-2 text-[1.1rem] font-bold text-primary tracking-wide whitespace-nowrap">
+                  {logo === 'KONSTRUKTION' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-4a2 2 0 012-2h2a2 2 0 012 2v4" />
+                    </svg>
+                  )}
+                  <span className={
+                    logo === 'Savex Bank' ? "font-serif" : 
+                    logo === 'Meta Mex' ? "font-['Work_Sans',sans-serif]" : 
+                    logo === 'HEX Fond' ? "font-serif tracking-wider" : ""
+                  }>
+                    {logo}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         

@@ -22,7 +22,7 @@ export default function WhoWeAre() {
               </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.15] text-primary font-['Work_Sans',sans-serif] font-medium mb-12 tracking-tight max-w-4xl">
+            <h2 className="text-3xl md:text-4xl lg:text-[3rem] leading-[1.15] text-primary font-['Work_Sans',sans-serif] font-medium mb-12 tracking-tight max-w-4xl">
               Founded by Industry <br className="hidden lg:block" />
               Trailblazers who Continue to <br className="hidden lg:block" />
               <span className="text-secondary">Lead the Way.</span>
