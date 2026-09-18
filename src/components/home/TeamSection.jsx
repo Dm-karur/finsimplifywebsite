@@ -7,7 +7,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="bg-[#F6F6F3] pt-24 lg:pt-32 pb-12 lg:pb-16">
+    <section className="bg-[#F6F6F3] pt-12 lg:pt-16 pb-12 lg:pb-16">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Area */}

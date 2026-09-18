@@ -261,13 +261,6 @@ export default function Navbar() {
             {/* MOBILE MENU BUTTON */}
             <div className="flex items-center lg:hidden gap-3">
               <button
-                aria-label={searchOpen ? "Close search" : "Open search"}
-                onClick={toggleSearch}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-muted text-primary hover:bg-secondary hover:text-text-on-primary transition-colors"
-              >
-                {searchOpen ? <CloseIcon /> : <SearchIcon />}
-              </button>
-              <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 type="button"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-text-on-primary hover:bg-secondary transition-colors focus:outline-none"

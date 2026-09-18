@@ -43,7 +43,7 @@ export default function ValuesSection() {
   ];
 
   return (
-    <section className="bg-surface pt-12 pb-12 lg:pt-16 lg:pb-16 relative">
+    <section className="bg-surface-muted pt-12 pb-6 lg:pt-16 lg:pb-8 relative">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Split Header */}

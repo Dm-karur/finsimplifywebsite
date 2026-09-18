@@ -4,9 +4,9 @@ export default function WhoWeAre() {
   const [activeTab, setActiveTab] = useState('01');
 
   const tabContent = {
-    '01': "We're a staff of smart, friendly professionals dedicated to anticipating your needs and making your life easier.",
-    '02': "Our purpose is clear—empowering clients to streamline, protect, and grow the wealth they've diligently built.",
-    '03': "Content for 03 will be provided by the user shortly."
+    '01': "At FinSimplify, we believe that strong financial management gives business owners the confidence to focus on what matters most—innovation, customers and growth.",
+    '02': "We are a trusted financial services partner with over 30 years of experience in managing financial processes for clients in India and the USA.",
+    '03': "Our team supports businesses through reliable financial operations, meaningful reporting, specialist expertise and strategic financial guidance."
   };
 
   return (

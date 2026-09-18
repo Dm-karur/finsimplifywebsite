@@ -44,25 +44,25 @@ export default function ServicesSection() {
       title: 'Financial Planning',
       image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=600&q=80',
       clipPath: 'url(#shape-round)',
-      imageClass: 'absolute top-0 left-0 w-[85%] h-[70%] object-cover',
+      imageClass: 'absolute top-0 left-0 w-[75%] h-[65%] object-cover transition-transform duration-700 group-hover:scale-105',
     },
     {
-      title: 'Investment Management',
+      title: 'Accounting&Tax',
       image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80',
-      clipPath: 'url(#shape-jigsaw)',
-      imageClass: 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[90%] lg:w-[95%] aspect-square object-cover',
+      clipPath: 'url(#shape-diamond)',
+      imageClass: 'absolute top-0 left-0 w-[75%] h-[65%] object-cover transition-transform duration-700 group-hover:scale-105',
     },
     {
-      title: 'Insurance & Risk Management',
+      title: 'Accounts Payables',
       image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=600&q=80',
-      clipPath: 'url(#shape-shield)',
-      imageClass: 'absolute top-0 left-0 w-[85%] h-[70%] object-cover',
+      clipPath: 'url(#shape-round)',
+      imageClass: 'absolute top-0 left-0 w-[75%] h-[65%] object-cover transition-transform duration-700 group-hover:scale-105',
     },
     {
-      title: 'Alternative Investments',
+      title: 'Payroll Management',
       image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=600&q=80',
       clipPath: 'url(#shape-diamond)',
-      imageClass: 'absolute top-0 left-0 w-[85%] h-[65%] object-cover',
+      imageClass: 'absolute top-0 left-0 w-[75%] h-[65%] object-cover transition-transform duration-700 group-hover:scale-105',
     }
   ];
 
@@ -71,24 +71,24 @@ export default function ServicesSection() {
       {/* SVG Definitions for the unique exact card shapes */}
       <svg width="0" height="0" className="absolute opacity-0 pointer-events-none">
         <defs>
-          {/* 1. Round (Perfect quarter circle touching top & left edges) */}
+          {/* 1. Round (Quarter circle perfectly fitting top-left) */}
           <clipPath id="shape-round" clipPathUnits="objectBoundingBox">
-            <path d="M 0,0 L 1,0 C 1,0.55 0.55,1 0,1 Z" />
+            <path d="M 0,0 L 1,0 C 1,0.6 0.6,1 0,1 Z" />
           </clipPath>
           
-          {/* 2. Jigsaw (Complex puzzle piece with cutouts, flush top/left) */}
+          {/* 2. Jigsaw/Flower (Two petals with flat top and left edges) */}
           <clipPath id="shape-jigsaw" clipPathUnits="objectBoundingBox">
-            <path d="M 0.20,0.15 L 0.35,0.15 A 0.15 0.15 0 0 1 0.65 0.15 L 0.80,0.15 A 0.05 0.05 0 0 1 0.85 0.20 L 0.85,0.35 A 0.15 0.15 0 0 0 0.85 0.65 L 0.85,0.80 A 0.05 0.05 0 0 1 0.80 0.85 L 0.65,0.85 A 0.15 0.15 0 0 1 0.35 0.85 L 0.20,0.85 A 0.05 0.05 0 0 1 0.15 0.80 L 0.15,0.65 A 0.15 0.15 0 0 0 0.15 0.35 L 0.15,0.20 A 0.05 0.05 0 0 1 0.20 0.15 Z" />
+            <path d="M 0,0 L 0.6,0 C 1,0 1,0.6 0.5,0.5 C 0.6,1 0,1 0,0.6 Z" />
           </clipPath>
           
-          {/* 3. Shield (Pentagon with straight top, left, right edges and V-bottom) */}
+          {/* 3. Shield (Flat top & left, angled to bottom point) */}
           <clipPath id="shape-shield" clipPathUnits="objectBoundingBox">
-            <path d="M 0,0 L 1,0 L 1,0.6 L 0.5,1 L 0,0.6 Z" />
+            <path d="M 0,0 L 1,0 L 1,0.4 L 0.5,1 L 0,0.4 Z" />
           </clipPath>
           
-          {/* 4. Cut Diamond (Tilted rounded square with flat top and left boundaries) */}
+          {/* 4. Diamond (Tilted square flush with top-left, with rounded corners) */}
           <clipPath id="shape-diamond" clipPathUnits="objectBoundingBox">
-            <path d="M 0,0 L 0.45,0 L 0.9,0.45 Q 0.95,0.5 0.9,0.55 L 0.55,0.9 Q 0.5,0.95 0.45,0.9 L 0,0.45 Z" />
+            <path d="M 0,0 L 0.65,0 Q 0.7,0 0.745,0.06 L 0.955,0.34 Q 1,0.4 0.91,0.49 L 0.49,0.91 Q 0.4,1 0.34,0.955 L 0.06,0.745 Q 0,0.7 0,0.63 Z" />
           </clipPath>
         </defs>
       </svg>

@@ -11,7 +11,7 @@ export default function AboutHero() {
   return (
     <div className="w-full">
       {/* Top Background Section (Gray) */}
-      <div className="w-full bg-[#F9F9F8] pt-20 pb-12 lg:pt-28">
+      <div className="w-full bg-[#F9F9F8] pt-8 pb-12 lg:pt-12">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* WHO WE ARE Pill */}

@@ -1,11 +1,16 @@
 export default function TestimonialsSection() {
   const logos = [
-    "HEX Fond",
-    "MTGox ®",
-    "Savex Bank",
-    "Cooinbasee",
-    "KONSTRUKTION",
-    "Meta Mex"
+    "Software & IT-Enabled Services",
+    "Professional Services & Consulting",
+    "Banking & Financial Services",
+    "Healthcare",
+    "Retail & Trading",
+    "Hospitality",
+    "Construction & Engineering",
+    "Capital Goods",
+    "Agro-Industry",
+    "Pharmaceuticals",
+    "Education"
   ];
 
   return (
@@ -108,19 +113,9 @@ export default function TestimonialsSection() {
             {/* First Set */}
             <div className="flex items-center gap-16 lg:gap-24 px-8 lg:px-12">
               {logos.map((logo, index) => (
-                <div key={index} className="flex items-center gap-2 text-[1.1rem] font-bold text-primary tracking-wide whitespace-nowrap">
-                  {logo === 'KONSTRUKTION' && (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-4a2 2 0 012-2h2a2 2 0 012 2v4" />
-                    </svg>
-                  )}
-                  <span className={
-                    logo === 'Savex Bank' ? "font-serif" : 
-                    logo === 'Meta Mex' ? "font-['Work_Sans',sans-serif]" : 
-                    logo === 'HEX Fond' ? "font-serif tracking-wider" : ""
-                  }>
-                    {logo}
-                  </span>
+                <div key={index} className="flex items-center gap-2 text-[1.1rem] font-medium text-primary tracking-wide whitespace-nowrap font-['Work_Sans',sans-serif]">
+                  <span className="w-2 h-2 rounded-full bg-secondary mr-2"></span>
+                  {logo}
                 </div>
               ))}
             </div>
@@ -128,19 +123,9 @@ export default function TestimonialsSection() {
             {/* Second Set (Duplicate for seamless scroll) */}
             <div className="flex items-center gap-16 lg:gap-24 px-8 lg:px-12" aria-hidden="true">
               {logos.map((logo, index) => (
-                <div key={`dup-${index}`} className="flex items-center gap-2 text-[1.1rem] font-bold text-primary tracking-wide whitespace-nowrap">
-                  {logo === 'KONSTRUKTION' && (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-4a2 2 0 012-2h2a2 2 0 012 2v4" />
-                    </svg>
-                  )}
-                  <span className={
-                    logo === 'Savex Bank' ? "font-serif" : 
-                    logo === 'Meta Mex' ? "font-['Work_Sans',sans-serif]" : 
-                    logo === 'HEX Fond' ? "font-serif tracking-wider" : ""
-                  }>
-                    {logo}
-                  </span>
+                <div key={`dup-${index}`} className="flex items-center gap-2 text-[1.1rem] font-medium text-primary tracking-wide whitespace-nowrap font-['Work_Sans',sans-serif]">
+                  <span className="w-2 h-2 rounded-full bg-secondary mr-2"></span>
+                  {logo}
                 </div>
               ))}
             </div>

@@ -10,7 +10,7 @@ export default function ProcessSection() {
     {
       number: "02",
       title: "Organized Meeting",
-      description: "Meet with our team to gather the necessary data for your Financial Plan. We'll discuss your finances, lifestyle, and goals, including investments, assets, expenses, and income."
+      description: "Meet with our team to gather the necessary data for your Financial Plan. We'll discuss your Business, finances, Accounts, and goals, including Taxations, Assets, liabilities, and income."
     },
     {
       number: "03",
