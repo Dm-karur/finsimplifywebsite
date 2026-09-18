@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import Services from '../pages/Services';
 import Blog from '../pages/Blog';
+import BlogPost from '../pages/BlogPost';
 import Contact from '../pages/Contact';
 import CfoOperations from '../pages/services/CfoOperations';
 import AccountingCompliance from '../pages/services/AccountingCompliance';
@@ -13,10 +14,12 @@ import AccountsReceivable from '../pages/services/AccountsReceivable';
 import BusinessSetup from '../pages/services/BusinessSetup';
 import ContactSection from '../components/layout/ContactSection';
 import Footer from '../components/layout/Footer';
+import ScrollToTop from '../components/shared/ScrollToTop';
 
 export default function AppRoutes() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-surface">
         <Navbar />
         <main className="flex-grow">
@@ -31,6 +34,7 @@ export default function AppRoutes() {
             <Route path="/services/accounts-receivable" element={<AccountsReceivable />} />
             <Route path="/services/business-setup" element={<BusinessSetup />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

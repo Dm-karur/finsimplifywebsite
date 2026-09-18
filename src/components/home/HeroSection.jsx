@@ -5,9 +5,9 @@ export default function HeroSection() {
 
         {/* Top Content Row */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-10 animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.05] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight w-full lg:w-auto shrink-0">
-            Investing For <br />
-            <span className="whitespace-nowrap">Tomorrow, <span className="text-secondary">Together</span></span>
+          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight w-full lg:w-auto shrink-0">
+            Simplifying Finance. <br />
+            <span className="whitespace-nowrap">Strengthening <span className="text-secondary">Business</span></span>
           </h1>
 
           <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">

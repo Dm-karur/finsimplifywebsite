@@ -1,20 +1,28 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
-  const links = ['Services', 'Who we are', 'Insights', 'Careers', 'Team', 'Contact Us', 'FAQ'];
+  const links = [
+    { name: 'Services', path: '/services' },
+    { name: 'Who we are', path: '/about' },
+    { name: 'Team', path: '/#team' },
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'FAQ', path: '/#faq' }
+  ];
 
   return (
     <footer className="bg-[#02153D] text-[#FFFFFF] pt-16 pb-12">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Navigation Links */}
-        <div className="flex flex-wrap justify-between items-center gap-6 mb-16">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-16">
           {links.map((link) => (
-            <a
-              key={link}
-              href="#"
+            <Link
+              key={link.name}
+              to={link.path}
               className="text-[#FFFFFF] hover:text-[#70B650] transition-colors duration-300 font-medium text-[16px]"
             >
-              {link}
-            </a>
+              {link.name}
+            </Link>
           ))}
         </div>
 
