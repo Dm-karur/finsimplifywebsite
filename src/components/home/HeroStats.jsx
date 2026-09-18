@@ -25,7 +25,7 @@ export default function HeroStats() {
             </div>
             <div>
               <p className="text-[12px] text-text-secondary font-medium mb-1 leading-tight">Assets under management</p>
-              <h2 className="text-2xl lg:text-3xl font-display text-primary font-medium">$28.90M</h2>
+              <h2 className="text-2xl lg:text-3xl font-display text-primary font-medium">₹ 28.90M</h2>
             </div>
           </div>
           

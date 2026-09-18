@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function StepsToTake() {
   return (
-    <section className="bg-surface py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-surface py-10 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1400px] mx-auto">
         
         <div className="relative rounded-[2.5rem] overflow-hidden min-h-[500px] lg:min-h-[600px] shadow-sm">

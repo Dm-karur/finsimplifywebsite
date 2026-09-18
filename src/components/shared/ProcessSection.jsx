@@ -25,7 +25,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="bg-surface pt-10 lg:pt-12 pb-20 lg:pb-32 px-4 sm:px-6 lg:px-8">
+    <section className="bg-surface py-10 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1400px] mx-auto text-center">
         
         {/* Header */}
