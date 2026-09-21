@@ -7,14 +7,14 @@ export default function ServiceHero({ titlePart1, titlePart2, description, image
       <div className="max-w-[1400px] mx-auto">
         
         {/* Top Header */}
-        <div className="mb-4">
+        <div className="mb-10">
           <Link to="/services" className="inline-block border border-gray-200 rounded-full px-5 py-1.5 mb-6 shadow-sm hover:bg-gray-50 transition-colors duration-300">
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
               SERVICES
             </span>
           </Link>
           
-          <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] leading-[1.05] font-['Work_Sans',sans-serif] font-normal tracking-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-[3.8rem] leading-[1.05] font-['Work_Sans',sans-serif] font-normal tracking-tight">
             <span className="text-secondary">{titlePart1}</span> <span className="text-primary">{titlePart2}</span>
           </h1>
         </div>
@@ -28,9 +28,9 @@ export default function ServiceHero({ titlePart1, titlePart2, description, image
           
           {/* Action Buttons */}
           <Link to="/contact" className="flex gap-2 items-center shrink-0 group mb-1">
-            <button className="bg-primary text-white text-[14px] font-semibold px-7 py-3.5 rounded-full group-hover:bg-opacity-90 transition-all duration-300 shadow-md">
+            <div className="bg-primary text-white text-[14px] font-semibold px-7 py-3.5 rounded-full group-hover:bg-opacity-90 transition-all duration-300 shadow-md">
               Free Consultation
-            </button>
+            </div>
             <div className="bg-primary text-secondary w-[46px] h-[46px] rounded-full flex items-center justify-center transition-all duration-300 shadow-md group-hover:bg-opacity-90">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
                 <line x1="7" y1="17" x2="17" y2="7"></line>

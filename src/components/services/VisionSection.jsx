@@ -36,11 +36,11 @@ export default function VisionSection() {
               </div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-[2.5rem] leading-[1.1] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight mt-10 mb-8 max-w-[85%]">
+            <h2 className="text-4xl md:text-5xl lg:text-[2.5rem] leading-[1.1] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight mt-4 mb-8 max-w-[85%]">
               Building a Stronger Financial Future
             </h2>
 
-            <p className="text-[16px] text-primary font-medium leading-relaxed mt-auto max-w-[90%]">
+            <p className="text-[15px] text-primary font-medium leading-relaxed mt-auto max-w-[90%]">
                At Finsimplify, we combine financial expertise with practical business insight to help organisations manage their finances with greater clarity and confidence. From essential accounting operations and payroll to financial planning, taxation, reporting, and CFO advisory, our tailored solutions support businesses at every stage. We take care of the numbers so you can focus on making better decisions and growing your business.
             </p>
 

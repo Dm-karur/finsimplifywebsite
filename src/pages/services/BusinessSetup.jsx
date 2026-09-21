@@ -4,7 +4,7 @@ import StepsToTake from '../../components/shared/StepsToTake';
 import ProcessSection from '../../components/shared/ProcessSection';
 import VisionSection from '../../components/services/VisionSection';
 import PlanningApproach from '../../components/services/PlanningApproach';
-import submenuImage from '../../assets/images/submenu6.png';
+import submenuImage from '../../assets/images/submenu6.jpg';
 
 export default function BusinessSetup() {
   return (

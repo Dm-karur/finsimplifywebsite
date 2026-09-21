@@ -4,15 +4,15 @@ import StepsToTake from '../../components/shared/StepsToTake';
 import ProcessSection from '../../components/shared/ProcessSection';
 import VisionSection from '../../components/services/VisionSection';
 import PlanningApproach from '../../components/services/PlanningApproach';
-import submenuImage from '../../assets/images/submenu1.jpg';
+import submenuImage from '../../assets/images/submenu4.jpg';
 
-export default function CfoOperations() {
+export default function AccountingReporting() {
   return (
     <div className="pt-4 lg:pt-8">
       <ServiceHero 
-        titlePart1="CFO & Finance" 
-        titlePart2="Operations" 
-        description="At Finsimplify, we provide expert CFO and finance operations support designed to help businesses optimize performance, manage cash flow, and achieve strategic growth." 
+        titlePart1="Accounting" 
+        titlePart2="& Reporting" 
+        description="Maintain accurate ledgers, ensure compliance, and receive timely financial reports that provide a clear picture of your business's financial health." 
         image={submenuImage} 
       />
       <VisionSection />

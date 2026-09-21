@@ -4,14 +4,14 @@ import StepsToTake from '../../components/shared/StepsToTake';
 import ProcessSection from '../../components/shared/ProcessSection';
 import VisionSection from '../../components/services/VisionSection';
 import PlanningApproach from '../../components/services/PlanningApproach';
-import submenuImage from '../../assets/submenu4.png';
+import submenuImage from '../../assets/images/submenu1.jpg';
 
 export default function AccountsPayable() {
   return (
     <div className="pt-4 lg:pt-8">
       <ServiceHero 
-        titlePart1="Accounts" 
-        titlePart2="Payable" 
+        titlePart1="Accounts Payable" 
+        titlePart2="Management" 
         description="Optimize your cash flow and vendor relationships with our efficient accounts payable outsourcing, turning invoice processing into a seamless operation." 
         image={submenuImage} 
       />

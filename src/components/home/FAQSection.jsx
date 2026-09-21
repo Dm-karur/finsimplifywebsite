@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -46,9 +47,9 @@ export default function FAQSection() {
               Common questions on financial planning and investing
             </p>
 
-            <button className="bg-primary text-white text-[13px] font-bold px-8 py-3.5 rounded-full hover:bg-primary-hover hover:shadow-lg transition-all duration-300 w-fit">
+            <Link to="/blog" className="inline-block bg-primary text-white text-[13px] font-bold px-8 py-3.5 rounded-full hover:bg-primary-hover hover:shadow-lg transition-all duration-300 w-fit text-center">
               Learn More
-            </button>
+            </Link>
           </div>
 
           {/* Right Column: Accordion */}

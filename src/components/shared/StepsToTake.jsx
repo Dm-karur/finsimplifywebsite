@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function StepsToTake() {
   return (
@@ -38,9 +39,11 @@ export default function StepsToTake() {
                 We are Transparent Like that. No Gimmicks.
               </p>
               
-              <button className="bg-primary text-white text-[13px] font-semibold px-8 py-3.5 rounded-full hover:bg-primary-hover transition-colors shadow-md shrink-0">
-                Schedule a Call
-              </button>
+              <Link to="/contact">
+                <button className="bg-primary text-white text-[13px] font-semibold px-8 py-3.5 rounded-full hover:bg-primary-hover transition-colors shadow-md shrink-0 cursor-pointer">
+                  Schedule a Call
+                </button>
+              </Link>
             </div>
             
           </div>

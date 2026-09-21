@@ -47,7 +47,7 @@ export default function ValuesSection() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Split Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-end gap-10 lg:gap-20 mb-20 animate-fade-in-up">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-10 lg:gap-20 mb-20 animate-fade-in-up">
           {/* Left: Heading */}
           <div className="flex-1">
             <div className="inline-block border border-border rounded-full px-5 py-2 mb-8 shadow-sm">

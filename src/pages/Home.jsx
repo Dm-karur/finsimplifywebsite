@@ -2,9 +2,11 @@ import HeroSection from '../components/home/HeroSection';
 import HeroStats from '../components/home/HeroStats';
 import WhoWeAre from '../components/home/WhoWeAre';
 import ServicesSection from '../components/home/ServicesSection';
+import FinancialProcessesSection from '../components/home/FinancialProcessesSection';
 import ValuesSection from '../components/home/ValuesSection';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import TeamSection from '../components/home/TeamSection';
+import DeliveryFrameworkSection from '../components/home/DeliveryFrameworkSection';
 import TrustedPartner from '../components/home/TrustedPartner';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import LatestBlogs from '../components/home/LatestBlogs';
@@ -17,9 +19,11 @@ export default function Home() {
       <HeroStats />
       <WhoWeAre />
       <ServicesSection />
+      <FinancialProcessesSection />
       <ValuesSection />
       <WhyChooseUs />
       <TeamSection />
+      <DeliveryFrameworkSection />
       <TrustedPartner />
       <TestimonialsSection />
       <LatestBlogs />

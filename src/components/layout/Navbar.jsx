@@ -15,12 +15,32 @@ const navigationItems = [
     path: "/services",
     hasDropdown: true,
     items: [
-      { label: "CFO & Finance Operations", path: "/services/cfo-operations" },
-      { label: "Accounting & Compliance", path: "/services/accounting-compliance" },
-      { label: "Payroll Management", path: "/services/payroll-management" },
-      { label: "Accounts Payable (AP)", path: "/services/accounts-payable" },
-      { label: "Accounts Receivable (AR)", path: "/services/accounts-receivable" },
-      { label: "Business Setup & Incorporation", path: "/services/business-setup" },
+      {
+        label: "TRANSACTIONAL ACTIVITIES",
+        hasSubmenu: true,
+        subItems: [
+          { label: "Accounts Payable Management", path: "/services/accounts-payable" },
+          { label: "Accounts Receivables Management", path: "/services/accounts-receivable" },
+          { label: "Payroll", path: "/services/payroll-management" }
+        ]
+      },
+      {
+        label: "DECISION SUPPORT ACTIVITIES",
+        hasSubmenu: true,
+        subItems: [
+          { label: "Financial Accounting & Reporting", path: "/services/accounting-reporting" },
+          { label: "Management reporting", path: "/services/management-reporting" }
+        ]
+      },
+      {
+        label: "EXPERT  FUNCTION  ACTIVITIES",
+        hasSubmenu: true,
+        subItems: [
+          { label: "Financial Planning & Analysis", path: "/services/financial-planning" },
+          { label: "Taxes", path: "/services/taxes" },
+          { label: "Consulting CFO Services", path: "/services/consulting-cfo" }
+        ]
+      },
       { label: "All Services", path: "/services", isHighlighted: true }
     ]
   },
@@ -78,6 +98,7 @@ const CloseIcon = () => (
 
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [contactPanelOpen, setContactPanelOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -90,6 +111,7 @@ export default function Navbar() {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setActiveDropdown(null);
+        setActiveNestedDropdown(null);
       }
     };
     if (activeDropdown) {
@@ -103,6 +125,7 @@ export default function Navbar() {
     const handleEscape = (event) => {
       if (event.key === 'Escape') {
         setActiveDropdown(null);
+        setActiveNestedDropdown(null);
         setSearchOpen(false);
         // Contact panel escape is handled in ContactPanel component
       }
@@ -114,16 +137,25 @@ export default function Navbar() {
   // Handle Route Changes
   useEffect(() => {
     setActiveDropdown(null);
+    setActiveNestedDropdown(null);
     setSearchOpen(false);
     setContactPanelOpen(false);
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
+  const toggleNestedDropdown = (e, label) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setActiveNestedDropdown(activeNestedDropdown === label ? null : label);
+  };
+
   const toggleDropdown = (label) => {
     if (activeDropdown === label) {
       setActiveDropdown(null);
+      setActiveNestedDropdown(null);
     } else {
       setActiveDropdown(label);
+      setActiveNestedDropdown(null);
       setSearchOpen(false);
       setContactPanelOpen(false);
     }
@@ -151,9 +183,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="bg-surface relative z-50">
+      <header className="bg-surface relative z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24" ref={navRef}>
+          <div className="flex justify-between items-center h-20" ref={navRef}>
 
             {/* LOGO + BRAND NAME */}
             <Link to="/" className="flex items-center gap-3 shrink-0 group">
@@ -195,8 +227,8 @@ export default function Navbar() {
 
                   {/* DROPDOWN MENU */}
                   {item.hasDropdown && activeDropdown === item.label && (
-                    <div className="absolute top-[120%] left-1/2 -translate-x-1/2 w-[280px] bg-surface rounded-[1.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] overflow-hidden animate-dropdown">
-                      <div className="py-2">
+                    <div className="absolute top-[100%] mt-4 left-0 w-[340px] bg-surface rounded-[1.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.08)] overflow-hidden animate-dropdown">
+                      <div>
                         {item.items.map((subItem, idx) => {
                           if (subItem.isHighlighted) {
                             return (
@@ -216,12 +248,38 @@ export default function Navbar() {
                               </Link>
                             );
                           }
+                          if (subItem.hasSubmenu) {
+                            return (
+                              <div key={idx} className="block">
+                                <button
+                                  onClick={(e) => toggleNestedDropdown(e, subItem.label)}
+                                  className="w-full flex items-center justify-between px-6 py-3 text-[14px] font-semibold text-primary hover:bg-secondary hover:text-primary transition-colors text-left"
+                                >
+                                  {subItem.label}
+                                  <ChevronDownIcon className={`w-4 h-4 transition-transform duration-250 ${activeNestedDropdown === subItem.label ? 'rotate-180' : '-rotate-90'}`} />
+                                </button>
+                                <div className={`overflow-hidden transition-all duration-300 ease-in-out bg-[#F9F9F8] ${activeNestedDropdown === subItem.label ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                                  {subItem.subItems.map((child, cIdx) => (
+                                    <Link
+                                      key={cIdx}
+                                      to={child.path}
+                                      className="block px-8 py-2.5 text-[14px] font-medium text-text-secondary hover:text-primary hover:bg-[#ebebe9] transition-colors"
+                                      onClick={() => { setActiveDropdown(null); setActiveNestedDropdown(null); }}
+                                    >
+                                      {child.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            );
+                          }
+
                           return (
                             <Link
                               key={idx}
                               to={subItem.path}
-                              className="block px-6 py-2 text-[15px] font-medium text-primary hover:bg-secondary hover:text-primary transition-colors"
-                              onClick={() => setActiveDropdown(null)}
+                              className="block px-6 py-2.5 text-[15px] font-medium text-primary hover:bg-secondary hover:text-primary transition-colors"
+                              onClick={() => { setActiveDropdown(null); setActiveNestedDropdown(null); }}
                             >
                               {subItem.label}
                             </Link>
@@ -236,15 +294,6 @@ export default function Navbar() {
 
             {/* RIGHT BUTTONS */}
             <div className="hidden lg:flex items-center space-x-4 shrink-0">
-              {/* Search Button */}
-              <button
-                aria-label={searchOpen ? "Close search" : "Open search"}
-                onClick={toggleSearch}
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-surface-muted text-primary hover:bg-secondary hover:text-text-on-primary transition-colors"
-              >
-                {searchOpen ? <CloseIcon /> : <SearchIcon />}
-              </button>
-
               {/* Grid / Menu Button */}
               <button
                 aria-label={contactPanelOpen ? "Close contact panel" : "Open contact panel"}
@@ -299,15 +348,46 @@ export default function Navbar() {
                       {/* Mobile Dropdown */}
                       {activeDropdown === item.label && (
                         <div className="pl-6 pr-4 py-2 space-y-2 border-l-2 border-border-subtle ml-4 my-2">
-                          {item.items.map((subItem, idx) => (
-                            <Link
-                              key={idx}
-                              to={subItem.path}
-                              className="block px-4 py-3 text-body font-medium text-text-secondary hover:text-secondary transition-colors rounded-md"
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
+                          {item.items.map((subItem, idx) => {
+                            if (subItem.hasSubmenu) {
+                              return (
+                                <div key={idx}>
+                                  <button
+                                    onClick={(e) => toggleNestedDropdown(e, subItem.label)}
+                                    className="w-full flex items-center justify-between px-4 py-3 text-body font-medium text-text-secondary hover:text-secondary transition-colors rounded-md text-left"
+                                  >
+                                    <span className="text-[13px] font-bold uppercase tracking-wider">{subItem.label}</span>
+                                    <ChevronDownIcon className={`w-4 h-4 transition-transform duration-250 ${activeNestedDropdown === subItem.label ? 'rotate-180' : ''}`} />
+                                  </button>
+                                  <div className={`overflow-hidden transition-all duration-300 ease-in-out pl-4 border-l-2 border-border-subtle ml-2 ${activeNestedDropdown === subItem.label ? 'max-h-[250px] opacity-100 my-1' : 'max-h-0 opacity-0'}`}>
+                                    <div className="space-y-1 py-1">
+                                      {subItem.subItems.map((child, cIdx) => (
+                                        <Link
+                                          key={cIdx}
+                                          to={child.path}
+                                          className="block px-4 py-2 text-[14px] font-medium text-text-muted hover:text-secondary transition-colors rounded-md"
+                                          onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                          {child.label}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            }
+
+                            return (
+                              <Link
+                                key={idx}
+                                to={subItem.path}
+                                className="block px-4 py-3 text-body font-medium text-text-secondary hover:text-secondary transition-colors rounded-md"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {subItem.label}
+                              </Link>
+                            );
+                          })}
                         </div>
                       )}
                     </>

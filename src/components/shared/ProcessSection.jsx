@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function ProcessSection() {
   const steps = [
     {
@@ -67,17 +67,17 @@ export default function ProcessSection() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-2 items-center justify-center">
-          <button className="bg-primary text-white text-[13px] font-semibold px-8 py-3.5 rounded-full hover:bg-secondary hover:text-primary transition-colors duration-300 shadow-md">
+        <Link to="/contact" className="flex gap-2 items-center justify-center group">
+          <div className="bg-primary text-white text-[13px] font-semibold px-8 py-3.5 rounded-full group-hover:bg-secondary group-hover:text-primary transition-colors duration-300 shadow-md">
             Free Consultation
-          </button>
-          <button className="bg-primary hover:bg-secondary group text-secondary hover:text-primary w-[46px] h-[46px] rounded-full flex items-center justify-center transition-colors duration-300 shadow-md">
+          </div>
+          <div className="bg-primary group-hover:bg-secondary text-secondary group-hover:text-primary w-[46px] h-[46px] rounded-full flex items-center justify-center transition-colors duration-300 shadow-md">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
-          </button>
-        </div>
+          </div>
+        </Link>
 
       </div>
     </section>

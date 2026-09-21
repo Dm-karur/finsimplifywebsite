@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 export default function PlanningApproach() {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -50,9 +50,11 @@ export default function PlanningApproach() {
             We thoroughly assess your current financial landscape, taking into account both short- and long-term objectives, family dynamics, and evolving priorities. Our dedicated team supports you through every stage of the planning process and significant life milestones.
           </p>
 
-          <button className="bg-primary text-white text-[13px] font-semibold px-8 py-3.5 rounded-full hover:bg-secondary hover:text-primary transition-colors duration-300 shadow-md">
-            Schedule a Call
-          </button>
+          <Link to="/contact">
+            <button className="bg-primary text-white text-[13px] font-semibold px-8 py-3.5 rounded-full hover:bg-secondary hover:text-primary transition-colors duration-300 shadow-md cursor-pointer">
+              Schedule a Call
+            </button>
+          </Link>
         </div>
 
         {/* Right Column: Accordion */}

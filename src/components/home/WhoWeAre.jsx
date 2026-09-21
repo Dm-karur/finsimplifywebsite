@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function WhoWeAre() {
   const [activeTab, setActiveTab] = useState('01');
@@ -29,12 +30,9 @@ export default function WhoWeAre() {
             </h2>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-primary text-text-on-primary px-8 py-3.5 rounded-full font-medium hover:bg-primary-hover transition-colors shadow-md text-sm">
+              <Link to="/blog" className="bg-primary text-text-on-primary px-8 py-3.5 rounded-full font-medium hover:bg-primary-hover transition-colors shadow-md text-sm text-center">
                 Learn More
-              </button>
-              <button className="bg-transparent border border-border-strong text-primary px-8 py-3.5 rounded-full font-medium hover:bg-surface-muted transition-colors shadow-sm text-sm">
-                Our Philosophy
-              </button>
+              </Link>
             </div>
           </div>
           

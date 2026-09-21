@@ -4,7 +4,7 @@ import StepsToTake from '../../components/shared/StepsToTake';
 import ProcessSection from '../../components/shared/ProcessSection';
 import VisionSection from '../../components/services/VisionSection';
 import PlanningApproach from '../../components/services/PlanningApproach';
-import submenuImage from '../../assets/submenu3.png';
+import submenuImage from '../../assets/images/submenu3.jpg';
 
 export default function PayrollManagement() {
   return (
@@ -12,7 +12,7 @@ export default function PayrollManagement() {
       <ServiceHero 
         titlePart1="Payroll" 
         titlePart2="Management" 
-        description="Streamline your payroll processes with our reliable, secure, and fully compliant payroll management solutions tailored to your unique workforce requirements." 
+        description="Ensure accurate, timely, and compliant payroll processing for your entire workforce with our dedicated payroll solutions." 
         image={submenuImage} 
       />
       <VisionSection />

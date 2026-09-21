@@ -15,9 +15,7 @@ export default function LatestBlogs() {
             </h2>
           </div>
 
-          <button className="bg-primary text-white text-[13px] font-bold px-8 py-3.5 rounded-full hover:bg-primary-hover hover:shadow-lg transition-all duration-300 whitespace-nowrap mb-2">
-            More Insights
-          </button>
+          
         </div>
 
         {/* Cards Grid */}

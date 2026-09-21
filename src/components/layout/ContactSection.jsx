@@ -1,5 +1,5 @@
 import finlogo from '../../assets/images/finlogo.png';
-
+import { Link } from 'react-router-dom';
 export default function ContactSection() {
   return (
     <section className="bg-[#F6F6F3] pt-4 pb-16 lg:pt-8 lg:pb-24">
@@ -13,7 +13,9 @@ export default function ContactSection() {
             {/* Logo area */}
             <div className="flex items-center gap-3 mb-12">
               <img src={finlogo} alt="Finsimplify Logo" className="w-8 h-8 lg:w-10 lg:h-10 object-contain" />
-              <span className="text-xl lg:text-[22px] font-medium text-primary font-['Work_Sans',sans-serif]">Finsimplify</span>
+               <span className="font-display text-primary text-2xl tracking-wide group-hover:text-secondary transition-colors">
+                FinSimplify
+              </span>
             </div>
 
             <h2 className="text-4xl lg:text-[3.5rem] leading-[1.15] font-medium text-primary font-['Work_Sans',sans-serif] mb-8 tracking-tight max-w-xl">
@@ -25,17 +27,17 @@ export default function ContactSection() {
             </p>
 
             {/* Hoverable Button Group */}
-            <div className="flex items-center gap-2 group cursor-pointer w-fit">
-              <button className="bg-primary text-white text-[13px] font-bold px-8 py-3.5 rounded-full group-hover:bg-primary-hover transition-all duration-300">
+            <Link to="/contact" className="flex items-center gap-2 group cursor-pointer w-fit">
+              <div className="bg-primary text-white text-[13px] font-bold px-8 py-3.5 rounded-full group-hover:bg-primary-hover transition-all duration-300">
                 Free Consultation
-              </button>
+              </div>
               <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center text-secondary group-hover:bg-primary-hover transition-all duration-300 shrink-0">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </div>
-            </div>
+            </Link>
 
           </div>
 

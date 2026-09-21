@@ -34,9 +34,7 @@ export default function TestimonialsSection() {
 
             {/* Bottom Actions */}
             <div className="flex flex-wrap items-center gap-6 lg:gap-10 mt-auto">
-              <button className="bg-primary text-white text-[13px] font-bold px-8 py-4 rounded-full hover:bg-primary-hover hover:shadow-lg transition-all duration-300 whitespace-nowrap">
-                Read All Testimonials
-              </button>
+              
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#F6F6F3] rounded-full flex items-center justify-center shrink-0">

@@ -4,15 +4,15 @@ import StepsToTake from '../../components/shared/StepsToTake';
 import ProcessSection from '../../components/shared/ProcessSection';
 import VisionSection from '../../components/services/VisionSection';
 import PlanningApproach from '../../components/services/PlanningApproach';
-import submenuImage from '../../assets/images/submenu1.jpg';
+import submenuImage from '../../assets/images/submenu8.jpg';
 
-export default function CfoOperations() {
+export default function ConsultingCfo() {
   return (
     <div className="pt-4 lg:pt-8">
       <ServiceHero 
-        titlePart1="CFO & Finance" 
-        titlePart2="Operations" 
-        description="At Finsimplify, we provide expert CFO and finance operations support designed to help businesses optimize performance, manage cash flow, and achieve strategic growth." 
+        titlePart1="Consulting CFO" 
+        titlePart2="Services" 
+        description="Access executive-level financial leadership and strategic guidance on demand to propel your business growth." 
         image={submenuImage} 
       />
       <VisionSection />
