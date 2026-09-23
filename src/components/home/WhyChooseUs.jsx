@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 
 export default function WhyChooseUs() {
   const services = [
-    "Financial Planning",
-    "Accounting & Tax",
-    "Accounts Payable",
-    "Accounts Receivables",
-    "Payroll Management"
+    { name: "Financial Planning", path: "/services/financial-planning" },
+    { name: "Accounting & Tax", path: "/services/accounting-reporting" },
+    { name: "Accounts Payable", path: "/services/accounts-payable" },
+    { name: "Accounts Receivables", path: "/services/accounts-receivable" },
+    { name: "Payroll Management", path: "/services/payroll-management" }
   ];
 
   return (
@@ -61,14 +61,15 @@ export default function WhyChooseUs() {
         <div className="w-full h-px bg-border-subtle my-16"></div>
 
         {/* Bottom Section - Buttons Row */}
-        <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-200">
+        <div className="flex flex-col md:flex-row flex-wrap items-center md:justify-start gap-4 animate-fade-in-up animation-delay-200">
           {services.map((service, index) => (
-            <button
+            <Link
               key={index}
+              to={service.path}
               className="group flex items-center gap-4 bg-[#F9F9F8] hover:bg-secondary transition-colors duration-300 px-2 py-2 pr-2 pl-6 rounded-full"
             >
               <span className="text-[15px] font-medium text-primary">
-                {service}
+                {service.name}
               </span>
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-secondary shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-105">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -76,7 +77,7 @@ export default function WhyChooseUs() {
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </div>
-            </button>
+            </Link>
           ))}
         </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import finLogo from '../../assets/images/finlogo.png';
+import { Link } from 'react-router-dom';  
 
 export default function ConsultationCTA() {
   return (
@@ -31,22 +32,12 @@ export default function ConsultationCTA() {
             </div>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.15] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight mt-10 mb-auto max-w-[90%]">
+          <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.15] text-primary font-['Work_Sans',sans-serif] font-medium tracking-tight mt-25 mb-auto max-w-[90%]">
             Schedule a Free Consultation at Your Preferred Time
           </h2>
           
           {/* Action Buttons */}
-          <div className="flex gap-2 items-center mt-auto">
-            <button className="bg-primary text-white text-[13px] font-semibold px-7 py-3.5 rounded-full hover:bg-white hover:text-primary transition-colors duration-300 shadow-md">
-              Free Consultation
-            </button>
-            <button className="bg-primary hover:bg-white group text-secondary hover:text-primary w-[46px] h-[46px] rounded-full flex items-center justify-center transition-colors duration-300 shadow-md">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </button>
-          </div>
+          
 
         </div>
 

@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 export default function TrustedPartner() {
   return (
     <section className="bg-surface pt-4 lg:pt-8 pb-8 lg:pb-12 overflow-hidden">
@@ -32,9 +34,9 @@ export default function TrustedPartner() {
             
             {/* Hoverable Button Group */}
             <div className="flex items-center gap-2 group cursor-pointer w-fit">
-              <button className="bg-primary text-white text-[13px] font-bold px-8 py-3.5 rounded-full group-hover:bg-primary-hover group-hover:shadow-xl transition-all duration-300">
+              <Link to="/contact" className="inline-block bg-primary text-white text-[13px] font-semibold px-7 py-3.5 rounded-full hover:bg-primary-hover transition-colors shadow-md">
                 Free Consultation
-              </button>
+              </Link>
               <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center text-secondary group-hover:bg-primary-hover group-hover:shadow-xl transition-all duration-300 shrink-0">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                   <line x1="7" y1="17" x2="17" y2="7"></line>

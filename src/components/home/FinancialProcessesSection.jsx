@@ -80,19 +80,19 @@ export default function FinancialProcessesSection() {
           </div>
           
           {/* Right Column: Industries */}
-          <div className="flex flex-col bg-primary rounded-[2.5rem] p-8 md:p-10 shadow-lg relative overflow-hidden">
+          <div className="flex flex-col bg-secondary rounded-[2.5rem] p-8 md:p-10 shadow-lg relative overflow-hidden">
             {/* Background pattern/glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
             
-            <h3 className="text-[20px] font-medium text-white mb-8 relative z-10">
-              Various clients across <span className="text-secondary font-semibold">US and India</span>
+            <h3 className="text-[20px] font-medium text-primary mb-8 relative z-10">
+              Various clients across <span className="font-bold">US and India</span>
             </h3>
             
             <div className="flex flex-col gap-3 relative z-10">
               {industries.map((ind, i) => (
-                <div key={i} className="bg-white/5 hover:bg-secondary/10 border border-white/10 hover:border-secondary/30 transition-colors duration-300 rounded-xl px-5 py-3.5 flex items-center gap-3 group">
-                  <div className="w-1.5 h-1.5 rounded-full bg-secondary opacity-50 group-hover:opacity-100 transition-opacity"></div>
-                  <span className="text-[14.5px] font-medium text-gray-200 group-hover:text-white transition-colors">
+                <div key={i} className="bg-primary rounded-xl px-5 py-3.5 flex items-center gap-3 shadow-sm">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></div>
+                  <span className="text-[14.5px] font-medium text-white">
                     {ind}
                   </span>
                 </div>

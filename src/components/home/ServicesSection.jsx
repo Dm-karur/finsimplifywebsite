@@ -45,18 +45,21 @@ export default function ServicesSection() {
       image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=600&q=80',
       clipPath: 'url(#shape-round)',
       imageClass: 'absolute top-0 left-0 w-[75%] h-[65%] object-cover transition-transform duration-700 group-hover:scale-105',
+      path: '/services/accounts-payable',
     },
     {
       title: 'DECISION SUPPORT ACTIVITIES',
       image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80',
       clipPath: 'url(#shape-diamond)',
       imageClass: 'absolute top-0 left-0 w-[75%] h-[65%] object-cover transition-transform duration-700 group-hover:scale-105',
+      path: '/services/accounting-reporting',
     },
     {
       title: 'EXPERT FUNCTION ACTIVITIES',
       image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&w=600&q=80',
       clipPath: 'url(#shape-round)',
       imageClass: 'absolute top-0 left-0 w-[75%] h-[65%] object-cover transition-transform duration-700 group-hover:scale-105',
+      path: '/services/financial-planning',
     },
 
   ];
@@ -116,7 +119,8 @@ export default function ServicesSection() {
         {/* Cards Grid */}
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <div
+            <Link
+              to={service.path}
               key={index}
               className={`group bg-secondary rounded-[2.5rem] h-[400px] lg:h-[480px] p-6 lg:p-8 flex flex-col justify-end relative cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden ${isCardsVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
               style={{ animationDelay: `${index * 100}ms` }}
@@ -148,7 +152,7 @@ export default function ServicesSection() {
                 </div>
               </div>
 
-            </div>
+            </Link>
           ))}
         </div>
       </div>

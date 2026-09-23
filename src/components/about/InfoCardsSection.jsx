@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default function InfoCardsSection() {
   return (
@@ -32,9 +33,9 @@ export default function InfoCardsSection() {
 
           {/* Action Buttons */}
           <div className="flex gap-2 items-center mt-auto pt-8">
-            <button className="bg-primary text-white text-[13px] font-semibold px-7 py-3.5 rounded-full hover:bg-primary-hover transition-transform duration-300 transform hover:scale-105 shadow-md">
-              Free Consultation
-            </button>
+             <Link to="/contact" className="inline-block bg-primary text-white text-[13px] font-semibold px-7 py-3.5 rounded-full hover:bg-primary-hover transition-colors shadow-md">
+                Free Consultation
+              </Link>
             <button className="bg-primary hover:bg-primary-hover text-secondary w-[46px] h-[46px] rounded-full flex items-center justify-center transition-transform duration-300 transform hover:scale-105 shadow-md">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7"></line>

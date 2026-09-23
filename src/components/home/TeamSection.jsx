@@ -9,7 +9,7 @@ export default function TeamSection({ title, customPadding = "pt-12 lg:pt-16 pb-
   ];
 
   return (
-    <section className={`bg-[#F6F6F3] ${customPadding}`}>
+    <section id="team" className={`bg-[#F6F6F3] ${customPadding}`}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header Area */}

@@ -107,7 +107,7 @@ export default function PlanningApproach() {
       {/* Bottom Check Pills Section */}
       <div className="max-w-[1400px] mx-auto">
         <hr className="border-border-subtle mb-10" />
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center gap-3 sm:gap-4">
           {checkPills.map((text, index) => (
             <div
               key={index}

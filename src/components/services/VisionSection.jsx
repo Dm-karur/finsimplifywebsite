@@ -19,7 +19,7 @@ export default function VisionSection() {
           </div>
 
           {/* Right Side: Card */}
-          <div className="bg-secondary rounded-[2.5rem] p-8 lg:p-12 flex flex-col justify-between shadow-sm h-[350px] lg:h-[450px]">
+          <div className="bg-secondary rounded-[2.5rem] p-8 lg:p-12 flex flex-col justify-between shadow-sm min-h-[350px] lg:h-[450px]">
 
             <div className="flex justify-between items-start">
               <div className="border border-primary/20 rounded-full px-5 py-2">

@@ -1,96 +1,113 @@
+import { Link } from 'react-router-dom';
+
 export default function HeroStats() {
   return (
-    <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 -mt-20 lg:-mt-28 mb-20">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.9fr_1.1fr] gap-5 lg:gap-6 h-auto lg:h-[210px]">
-        
-        {/* Card 1: Assets (Dark Premium Bento) */}
-        <div className="group relative bg-[#02153D] rounded-[2.5rem] p-6 lg:p-7 shadow-2xl overflow-hidden flex flex-col justify-between h-[210px] animate-fade-in-up border border-[#0A2661]">
-          {/* Subtle animated background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#70B650]/20 via-transparent to-[#70B650]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          
-          {/* Abstract background shapes */}
-          <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#70B650] rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-all duration-700"></div>
-          <div className="absolute -bottom-24 -left-12 w-64 h-64 bg-[#3B82F6] rounded-full blur-[100px] opacity-20"></div>
+    <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 -mt-20 lg:-mt-28 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_0.9fr_1.1fr] gap-5 lg:gap-6 lg:h-[210px]">
 
-          <div className="relative z-10 flex justify-between items-start">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#FFFFFF]/5 backdrop-blur-xl border border-[#FFFFFF]/10 flex items-center justify-center text-[#70B650] shadow-inner group-hover:scale-110 transition-transform duration-500">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        {/* Card 1: Assets */}
+        <div className="bg-gradient-to-b from-[#EFECE6] to-white rounded-[2.5rem] p-4 lg:p-5 flex flex-col sm:flex-row gap-4 h-auto lg:h-full animate-fade-in-up">
+          {/* Left Side: Assets & Learn More */}
+          <div className="flex flex-col justify-between sm:w-[35%] py-2 pl-2">
+            <h3 className="text-2xl text-[#112A26] font-medium tracking-tight">Assets</h3>
+
+            <Link to="/services" className="inline-flex items-center gap-2 group mt-8 sm:mt-0">
+              <span className="text-[13px] font-semibold text-[#112A26]">Learn more</span>
+              <div className="w-[22px] h-[22px] rounded-full bg-[#C6F000] flex items-center justify-center text-[#112A26] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </div>
-              <h3 className="text-lg text-[#FFFFFF]/80 font-medium tracking-wide">Assets Managed</h3>
-            </div>
+            </Link>
           </div>
-          
-          <div className="relative z-10 mt-auto">
-            <h2 className="text-4xl lg:text-5xl font-display text-[#FFFFFF] mb-2 tracking-tight group-hover:translate-x-2 transition-transform duration-500">
-              <span className="text-[#70B650] mr-1">₹</span>28.90<span className="text-2xl text-[#FFFFFF]/50">M</span>
-            </h2>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFFFFF]/10 backdrop-blur-md border border-[#FFFFFF]/5 text-xs text-[#FFFFFF] font-medium hover:bg-[#FFFFFF]/20 transition-colors cursor-pointer group-hover:translate-x-2 delay-75">
-              Explore Portfolio
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+
+          {/* Right Side Inner Cards */}
+          <div className="flex flex-row gap-3 sm:w-[65%] h-full">
+            {/* White Box */}
+            <div className="bg-white rounded-[1.8rem] p-5 flex flex-col justify-between flex-1 shadow-sm h-full">
+              <div className="text-[#112A26]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                </svg>
+              </div>
+              <div className="mt-4">
+                <p className="text-[15px] text-gray-700 font-semibold leading-tight mb-5">Assets under<br />management</p>
+                <h2 className="text-2xl lg:text-[1.5rem] font-sans text-[#112A26]" style={{ letterSpacing: '0.em', fontWeight: 650 }}>&#8377;28.90M</h2>
+              </div>
+            </div>
+
+            {/* Abstract Graphic Box */}
+            <div className="bg-[#0D261E] rounded-[1.8rem] flex-1 overflow-hidden relative shadow-sm h-full">
+              <div className="absolute inset-0">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <pattern id="stripes" width="4" height="4" patternUnits="userSpaceOnUse">
+                      <line x1="1" y1="0" x2="1" y2="4" stroke="#A6C254" strokeWidth="1.5" />
+                    </pattern>
+                  </defs>
+
+                  {/* Left Peak */}
+                  <path d="M 5,100 L 5,60 L 25,25 L 45,60 L 45,100 Z" fill="url(#stripes)" opacity="0.9" />
+
+                  {/* Center Peak */}
+                  <path d="M 30,100 L 30,70 L 60,15 L 90,70 L 90,100 Z" fill="url(#stripes)" opacity="0.9" />
+
+                  {/* Right Peak */}
+                  <path d="M 75,100 L 75,75 L 90,45 L 100,65 L 100,100 Z" fill="url(#stripes)" opacity="0.8" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Card 2: Professionals (Clean Light Bento) */}
-        <div className="group relative bg-white rounded-[2.5rem] p-6 lg:p-7 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col justify-between h-[210px] animate-fade-in-up animation-delay-100 hover:shadow-2xl hover:shadow-gray-200/80 transition-all duration-500 hover:-translate-y-1">
-          <div className="flex justify-between items-start">
-            <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-[#02153D] group-hover:bg-[#02153D] group-hover:text-[#FFFFFF] transition-colors duration-500">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        {/* Card 2: Professionals */}
+        <div className="bg-gradient-to-b from-[#EFECE6] to-white rounded-[2.5rem] p-4 lg:p-5 flex flex-col h-auto lg:h-full animate-fade-in-up animation-delay-100">
+          <div className="bg-white rounded-[1.8rem] p-5 flex flex-col justify-between h-full shadow-sm">
+            <div className="text-[#112A26]">
+              {/* Globe/Pie Icon */}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                <path d="M2 12h20"></path>
               </svg>
             </div>
-            <div className="px-3 py-1 bg-green-50 text-green-700 text-xs font-bold rounded-full border border-green-200 flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-              Global
-            </div>
-          </div>
-          
-          <div className="mt-auto">
-            <p className="text-sm text-gray-500 font-medium mb-1">Expert Professionals</p>
-            <div className="flex items-end justify-between">
-              <h2 className="text-4xl lg:text-5xl font-display text-[#02153D] tracking-tight">120<span className="text-[#70B650]">+</span></h2>
-              <div className="flex -space-x-3 group-hover:-space-x-1 transition-all duration-500 mb-1">
-                <img className="w-12 h-12 rounded-full border-[3px] border-white object-cover shadow-sm z-30" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Pro 1" />
-                <img className="w-12 h-12 rounded-full border-[3px] border-white object-cover shadow-sm z-20" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Pro 2" />
-                <div className="w-12 h-12 rounded-full border-[3px] border-white bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600 shadow-sm z-10">
-                  +99
-                </div>
+
+            <div className="mt-8 flex justify-between items-end">
+              <div>
+                <p className="text-[15px] text-gray-700 font-semibold mb-1">Professionals</p>
+                <h2 className="text-2xl lg:text-[2rem] font-sans text-[#112A26] leading-none" style={{ letterSpacing: '0.em', fontWeight: 650 }}>120+</h2>
+              </div>
+
+              <div className="flex -space-x-3">
+                <img className="w-10 h-10 rounded-full border-[2.5px] border-white object-cover shadow-sm z-30 filter grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="Pro 1" />
+                <img className="w-10 h-10 rounded-full border-[2.5px] border-white object-cover shadow-sm z-20 filter grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80" alt="Pro 2" />
+                <img className="w-10 h-10 rounded-full border-[2.5px] border-white object-cover shadow-sm z-10 filter grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="Pro 3" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Card 3: Trust (Glass Image Bento) */}
-        <div className="group relative rounded-[2.5rem] shadow-xl overflow-hidden h-[210px] animate-fade-in-up animation-delay-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Client Trust" className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-          
-          {/* Elegant dark gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#02153D]/90 via-[#02153D]/40 to-transparent"></div>
-          
-          <div className="absolute inset-0 p-6 lg:p-7 flex flex-col justify-between">
-            <div className="self-end w-12 h-12 rounded-2xl bg-[#FFFFFF]/20 backdrop-blur-md flex items-center justify-center text-[#FFFFFF] border border-[#FFFFFF]/30 group-hover:bg-[#70B650] group-hover:border-[#70B650] transition-colors duration-500">
-               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-               </svg>
+        {/* Card 3: Trust */}
+        <div className="relative rounded-[2.5rem] shadow-xl overflow-hidden h-auto min-h-[210px] lg:h-full animate-fade-in-up animation-delay-200">
+          <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Client Trust" className="absolute inset-0 w-full h-full object-cover" />
+
+          <div className="absolute inset-y-4 left-4 right-28 sm:right-48 lg:right-28 xl:right-32 bg-[#EBE9E4] rounded-[2rem] p-5 flex flex-col justify-between shadow-lg backdrop-blur-sm bg-opacity-95 border border-white/40">
+            <div className="text-[#112A26]">
+              {/* Bar Chart Icon */}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+                <line x1="4" y1="22" x2="20" y2="22"></line>
+              </svg>
             </div>
-            
-            <div className="mt-auto">
-              <div className="inline-flex items-center gap-2 mb-2 bg-[#FFFFFF]/20 backdrop-blur-md px-3 py-1 rounded-full border border-[#FFFFFF]/20">
-                <span className="w-2 h-2 rounded-full bg-[#70B650]"></span>
-                <p className="text-xs text-[#FFFFFF] font-semibold tracking-wide uppercase">Earning Trust</p>
-              </div>
-              <div className="flex items-baseline gap-2">
-                <span className="text-lg text-[#FFFFFF]/80 font-medium">Since</span>
-                <h2 className="text-4xl lg:text-5xl font-display text-[#FFFFFF] tracking-tight">2016</h2>
-              </div>
+
+            <div className="mt-8">
+              <p className="text-[15px] text-gray-700 font-semibold leading-[1.3] mb-1">Earning client<br />trust since</p>
+              <h2 className="text-3xl lg:text-[2rem] font-sans text-[#112A26] leading-none" style={{ letterSpacing: '0.em', fontWeight: 650 }}>2016</h2>
             </div>
           </div>
         </div>

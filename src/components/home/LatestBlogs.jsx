@@ -59,7 +59,7 @@ export default function LatestBlogs() {
 
             <div className="relative z-10 flex flex-col h-full">
               <h3 className="text-xl lg:text-[22px] font-medium text-secondary font-['Work_Sans',sans-serif] leading-[1.4] mb-8">
-                Diversity, Equity, and Inclusion
+                Taxation, Transactional Activties, and Management Reporting
               </h3>
 
               {/* Report Graphic Mockup */}

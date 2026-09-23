@@ -11,7 +11,7 @@ export default function WhoWeAre() {
   };
 
   return (
-    <section className="bg-surface py-20 lg:py-32 overflow-hidden">
+    <section className="bg-surface pt-10 pb-20 lg:pt-16 lg:pb-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           
