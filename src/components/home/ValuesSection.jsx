@@ -21,8 +21,8 @@ export default function ValuesSection() {
       )
     },
     {
-      title: 'Highly Personalized',
-      desc: 'A customized approach driven by proactive ideas and strategic problem-solving.',
+      title: 'Banking & Financial Services',
+      desc: 'Structured financial support designed around the processes and reporting needs of financial businesses.',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
           <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
@@ -32,14 +32,87 @@ export default function ValuesSection() {
       )
     },
     {
-      title: 'Experienced',
-      desc: 'A highly dedicated team, supported by our extensive network of trusted professionals.',
+      title: 'Healthcare Professionals',
+      desc: 'Reliable financial operations and reporting support for healthcare-focused businesses and professionals.',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
         </svg>
       )
+    },
+
+    {
+      title: 'Hospitality',
+      desc: 'Financial process support that helps hospitality businesses manage operations, reporting and cash flow.',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+          <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+          <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+          <line x1="6" y1="2" x2="6" y2="4"></line>
+          <line x1="10" y1="2" x2="10" y2="4"></line>
+          <line x1="14" y1="2" x2="14" y2="4"></line>
+        </svg>
+      )
+    },
+
+    {
+      title: 'Construction, Engineering & Capital Goods',
+      desc: 'Supporting complex businesses with accounting, reporting, compliance and financial management.',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+          <path d="M17 18h1"></path>
+          <path d="M12 18h1"></path>
+          <path d="M7 18h1"></path>
+        </svg>
+      )
+    },
+
+    {
+      title: 'Agro-industry',
+      desc: 'Financial support designed to help agro-industry businesses manage their core finance processes effectively.',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+        </svg>
+      )
+    },
+
+    {
+      title: 'Pharmaceuticals',
+      desc: 'Reliable accounting, compliance and financial process support for pharmaceutical businesses.',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
+          <path d="m8.5 8.5 7 7"></path>
+        </svg>
+      )
+    },
+
+    {
+      title: 'Education',
+      desc: 'Financial operations and reporting support that helps education businesses maintain clarity and control.',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+        </svg>
+      )
+    },
+
+    {
+      title: 'Retail & Trading',
+      desc: 'Helping businesses manage transactions, receivables, payables and financial visibility efficiently.',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      )
     }
+
   ];
 
   return (
@@ -56,7 +129,7 @@ export default function ValuesSection() {
 
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] text-primary font-['Work_Sans',sans-serif] font-normal tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] text-primary font-['Work_Sans',sans-serif] font-normal tracking-tight">
               Financial Expertise Across
               <br />
               <span className="whitespace-nowrap"> Diverse  <span className="text-secondary"> </span> &amp;</span>

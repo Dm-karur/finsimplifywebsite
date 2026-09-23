@@ -1,240 +1,146 @@
 import React from 'react';
 
 export default function DeliveryFrameworkSection() {
+  const timelineData = [
+    {
+      title: "Culture",
+      bgClass: "bg-[#7AB800]",
+      textClass: "text-[#7AB800]",
+      points: [
+        "Industry standard tools tailored for customer needs",
+        "Skills and career paths considering individual background and preferences"
+      ]
+    },
+    {
+      title: "Transparency",
+      bgClass: "bg-[#111827]",
+      textClass: "text-[#111827]",
+      points: [
+        "Customer focused with emphasis on business outcomes",
+        "Strict adherence to govt guidelines and procedures"
+      ]
+    },
+    {
+      title: "Tools",
+      bgClass: "bg-[#7AB800]",
+      textClass: "text-[#7AB800]",
+      points: [
+        "Industry standard tools tailored for customer needs",
+        "Leveraging the ecosystem tools to accelerate modern delivery"
+      ]
+    },
+    {
+      title: "People",
+      bgClass: "bg-[#00204a]",
+      textClass: "text-[#00204a]",
+      points: [
+        "Partner supervision for every project",
+        "Clear Roles and Responsibilities"
+      ]
+    },
+    {
+      title: "Process",
+      bgClass: "bg-[#4a90e2]",
+      textClass: "text-[#4a90e2]",
+      points: [
+        "Customized agile processes aligned to culture, objectives and constraints",
+        "Templatized approach",
+        "14x6 working model for maximizing coverage for US-based client stakeholders"
+      ]
+    }
+  ];
+
   return (
-    <section className="bg-white py-16 lg:py-24 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section className="bg-[#F9F9F8] py-16 lg:py-24 overflow-hidden relative">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Top Title */}
-        <div className="mb-16">
+        <div className="text-left mb-16 lg:mb-20 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-['Work_Sans',sans-serif] font-medium text-primary leading-tight">
-            Our Delivery <span className="text-[#7AB800]">Framework</span>
+            Our Delivery <span className="text-secondary font-bold">Framework</span>
           </h2>
         </div>
 
-        {/* --- DESKTOP VIEW (EXACT DIAGRAM) --- */}
-        <div className="hidden lg:block relative w-[1200px] h-[750px] mx-auto">
-          
-          {/* Background SVG for Lines & Arrows */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 750">
-            {/* Path & Arrow: Culture (Green) */}
-            <path d="M 225 60 L 580 60 L 580 190" fill="none" stroke="#7AB800" strokeWidth="1.5" />
-            <polygon points="215,55 225,60 215,65" fill="#7AB800" />
-            
-            {/* Path & Arrow: Transparency (Black) */}
-            <path d="M 255 250 L 510 250" fill="none" stroke="#111827" strokeWidth="1.5" />
-            <polygon points="245,245 255,250 245,255" fill="#111827" />
-            
-            {/* Path & Arrow: Tools (Green) */}
-            <path d="M 275 440 L 580 440 L 580 370" fill="none" stroke="#7AB800" strokeWidth="1.5" />
-            <polygon points="265,435 275,440 265,445" fill="#7AB800" />
-            
-            {/* Path & Arrow: People (Dark Blue) */}
-            <path d="M 660 220 L 790 220 L 790 100 L 805 100" fill="none" stroke="#00204a" strokeWidth="1.5" />
-            <polygon points="805,95 815,100 805,105" fill="#00204a" />
-            
-            {/* Path & Arrow: Process (Light Blue) */}
-            <path d="M 690 300 L 825 300" fill="none" stroke="#4a90e2" strokeWidth="1.5" />
-            <polygon points="825,295 835,300 825,305" fill="#4a90e2" />
-            
-            {/* Colored Ring around the Center Circle */}
-            <path d="M 600 190 A 90 90 0 0 0 510 280" fill="none" stroke="#7AB800" strokeWidth="8" />
-            <path d="M 510 280 A 90 90 0 0 0 600 370" fill="none" stroke="#7AB800" strokeWidth="8" />
-            <path d="M 600 370 A 90 90 0 0 0 690 280" fill="none" stroke="#4a90e2" strokeWidth="8" />
-            <path d="M 690 280 A 90 90 0 0 0 600 190" fill="none" stroke="#00204a" strokeWidth="8" />
-          </svg>
+        {/* Timeline Container */}
+        <div className="relative max-w-6xl mx-auto mb-24">
+          {/* Vertical Center Line (Desktop) / Left Line (Mobile) */}
+          <div className="absolute left-[34px] md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gray-200 rounded-full"></div>
 
-          {/* Center Circle */}
-          <div className="absolute top-[280px] left-[600px] w-40 h-40 bg-white rounded-full flex items-center justify-center -translate-x-1/2 -translate-y-1/2 z-10 shadow-[0_0_20px_rgba(0,0,0,0.1)] border-4 border-white">
-            <h4 className="text-center font-bold text-primary text-[15px] leading-snug">
-              FinSimplify<br/>Delivery<br/>Framework
-            </h4>
+          <div className="flex flex-col space-y-12 md:space-y-0">
+            {timelineData.map((item, index) => {
+              const isEven = index % 2 === 0;
+
+              return (
+                <div key={index} className={`relative flex flex-col md:flex-row items-start md:items-center justify-between w-full group ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} md:mb-16 last:mb-0 pl-20 md:pl-0`}>
+
+                  {/* Center Dot */}
+                  <div className={`absolute left-[36px] md:left-1/2 transform -translate-x-1/2 mt-1 md:mt-0 w-5 h-5 rounded-full ${item.bgClass} shadow-[0_0_0_4px_white,0_0_10px_rgba(0,0,0,0.1)] z-10 transition-transform duration-300 group-hover:scale-125`}></div>
+
+                  {/* Desktop Title Pill (Hidden on mobile, shown on opposite side) */}
+                  <div className={`hidden md:flex w-[45%] ${isEven ? 'justify-start pl-8 lg:pl-12' : 'justify-end pr-8 lg:pr-12'}`}>
+                    <div className={`${item.bgClass} text-white px-6 py-2.5 rounded-full shadow-md font-semibold text-[15px] tracking-wide inline-block transform transition-transform duration-300 group-hover:-translate-y-1`}>
+                      {item.title}
+                    </div>
+                  </div>
+
+                  {/* Content Box */}
+                  <div className={`w-full md:w-[45%] ${isEven ? 'md:text-right md:pr-8 lg:pr-12' : 'md:text-left md:pl-8 lg:pl-12'} animate-fade-in-up`} style={{ animationDelay: `${index * 100}ms` }}>
+
+                    {/* Mobile Title Pill (Visible only on mobile) */}
+                    <div className="md:hidden mb-4">
+                      <div className={`${item.bgClass} text-white px-5 py-2 rounded-full shadow-sm font-semibold text-[14px] tracking-wide inline-block`}>
+                        {item.title}
+                      </div>
+                    </div>
+
+                    <div className={`bg-white p-2 md:p-3 rounded-xl shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 group-hover:bg-secondary`}>
+                      <div className="bg-gray-50 rounded-lg p-3 md:p-4 w-full h-full">
+                        <ul className={`text-[14px] lg:text-[15px] text-black font-medium leading-relaxed space-y-2 ${isEven ? 'md:text-right' : 'text-left'}`}>
+                          {item.points.map((point, i) => (
+                            <li key={i} className={`flex items-start gap-3 ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                              <span className={`shrink-0 inline-block w-1.5 h-1.5 rounded-full mt-2 ${item.bgClass}`}></span>
+                              <span className="flex-1 text-left md:text-inherit">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              );
+            })}
           </div>
-
-          {/* Culture Text Box */}
-          <div className="absolute top-[35px] left-[0px] w-[210px] text-right">
-            <h3 style={{ color: '#7AB800' }} className="text-[22px] font-bold mb-2 pr-2">Culture</h3>
-            <ul className="text-[13px] text-gray-700 leading-tight space-y-2 inline-block text-left">
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Industry standard tools tailored for customer needs
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Skills and career paths considering individual background and preferences
-              </li>
-            </ul>
-          </div>
-
-          {/* Transparency Text Box */}
-          <div className="absolute top-[225px] left-[20px] w-[220px] text-right">
-            <h3 style={{ color: '#000000' }} className="text-[22px] font-bold mb-2 pr-2">Transparency</h3>
-            <ul className="text-[13px] text-gray-700 leading-tight space-y-2 inline-block text-left">
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Customer focused with emphasis on business outcomes
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Strict adherence to govt guidelines and procedures
-              </li>
-            </ul>
-          </div>
-
-          {/* Tools Text Box */}
-          <div className="absolute top-[415px] left-[40px] w-[220px] text-right">
-            <h3 style={{ color: '#7AB800' }} className="text-[22px] font-bold mb-2 pr-2">Tools</h3>
-            <ul className="text-[13px] text-gray-700 leading-tight space-y-2 inline-block text-left">
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Industry standard tools tailored for customer needs
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Leveraging the ecosystem tools to accelerate modern delivery
-              </li>
-            </ul>
-          </div>
-
-          {/* People Text Box */}
-          <div className="absolute top-[75px] left-[825px] w-[220px]">
-            <h3 style={{ color: '#00204a' }} className="text-[22px] font-bold mb-2">People</h3>
-            <ul className="text-[13px] text-gray-700 leading-tight space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Partner supervision for every project
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Clear Roles and Responsibilities
-              </li>
-            </ul>
-          </div>
-
-          {/* Process Text Box */}
-          <div className="absolute top-[275px] left-[845px] w-[300px]">
-            <h3 style={{ color: '#4a90e2' }} className="text-[22px] font-bold mb-2">Process</h3>
-            <ul className="text-[13px] text-gray-700 leading-tight space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Customized agile processes aligned to culture, objectives and constraints
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                Templatized approach
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 inline-block w-1 h-1 rounded-full border border-gray-400 mt-1.5"></span>
-                14x6 working model for maximizing coverage for US-based client stakeholders
-              </li>
-            </ul>
-          </div>
-
-          {/* Bottom Banner & Columns */}
-          <div className="absolute bottom-[20px] left-0 w-full">
-            
-            <div className="relative flex justify-center mb-8">
-              <div className="absolute top-1/2 left-[5%] w-[90%] h-px bg-[#00204a] -z-10"></div>
-              <div className="bg-[#00204a] text-white rounded-full py-4 px-10 text-center shadow-md max-w-[850px]">
-                <p style={{ color: '#ffffff' }} className="text-[14px] m-0 font-medium tracking-wide">
-                  Tailored for your needs: Point-in-time activities, outsourced process ownership or custom packages
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6 max-w-[900px] mx-auto">
-              <div className="text-center px-4 border-r border-[#00204a]/20">
-                <p className="text-[#00204a] font-bold text-[14px] leading-snug">
-                  Expert advice and support for point-in-time activities to support your business needs
-                </p>
-              </div>
-              <div className="text-center px-4 border-r border-[#00204a]/20">
-                <p className="text-[#00204a] font-bold text-[14px] leading-snug">
-                  Complete ownership of financial processes and recurring activities
-                </p>
-              </div>
-              <div className="text-center px-4">
-                <p className="text-[#00204a] font-bold text-[14px] leading-snug">
-                  A bouquet of financial activities and processes chosen by you that suits your business needs
-                </p>
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
-        {/* --- MOBILE VIEW (STACKED) --- */}
-        <div className="lg:hidden flex flex-col space-y-12 items-center">
-          
-          <div className="w-48 h-48 bg-white rounded-full flex items-center justify-center shadow-lg border-[6px] border-[#7AB800] relative">
-             <div className="absolute inset-[-6px] rounded-full border-[6px] border-l-transparent border-t-primary border-r-[#4a90e2] border-b-transparent"></div>
-             <h4 className="text-center font-bold text-primary text-lg">FinSimplify<br/>Delivery<br/>Framework</h4>
-          </div>
-
-          <div className="w-full space-y-8">
-            <div>
-              <h3 style={{ color: '#7AB800' }} className="text-[22px] font-bold mb-3">Culture</h3>
-              <ul className="text-[14px] text-gray-700 space-y-2">
-                <li>• Industry standard tools tailored for customer needs</li>
-                <li>• Skills and career paths considering individual background and preferences</li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 style={{ color: '#000000' }} className="text-[22px] font-bold mb-3">Transparency</h3>
-              <ul className="text-[14px] text-gray-700 space-y-2">
-                <li>• Customer focused with emphasis on business outcomes</li>
-                <li>• Strict adherence to govt guidelines and procedures</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 style={{ color: '#7AB800' }} className="text-[22px] font-bold mb-3">Tools</h3>
-              <ul className="text-[14px] text-gray-700 space-y-2">
-                <li>• Industry standard tools tailored for customer needs</li>
-                <li>• Leveraging the ecosystem tools to accelerate modern delivery</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 style={{ color: '#00204a' }} className="text-[22px] font-bold mb-3">People</h3>
-              <ul className="text-[14px] text-gray-700 space-y-2">
-                <li>• Partner supervision for every project</li>
-                <li>• Clear Roles and Responsibilities</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 style={{ color: '#4a90e2' }} className="text-[22px] font-bold mb-3">Process</h3>
-              <ul className="text-[14px] text-gray-700 space-y-2">
-                <li>• Customized agile processes aligned to culture, objectives and constraints</li>
-                <li>• Templatized approach</li>
-                <li>• 14x6 working model for maximizing coverage for US-based client stakeholders</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="w-full mt-10">
-            <div className="bg-primary text-white rounded-[2rem] py-5 px-6 text-center shadow-md mb-8">
-              <p style={{ color: '#ffffff' }} className="text-[15px] m-0 font-medium">
+        {/* Bottom Banner & Columns */}
+        <div className="max-w-[900px] mx-auto mt-20">
+          <div className="relative flex justify-center mb-10">
+            <div className="absolute top-1/2 left-[5%] w-[90%] h-px bg-primary/20 -z-10"></div>
+            <div className="bg-primary text-white rounded-full py-4 px-8 md:px-12 text-center shadow-lg transform transition-transform hover:-translate-y-1 duration-300">
+              <p className="text-[14px] md:text-[15px] m-0 font-medium tracking-wide">
                 Tailored for your needs: Point-in-time activities, outsourced process ownership or custom packages
               </p>
             </div>
+          </div>
 
-            <div className="flex flex-col space-y-6 text-center">
-              <p className="text-primary font-bold text-[15px] pb-6 border-b border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-4">
+            <div className="md:px-4 md:border-r border-border-subtle pb-6 md:pb-0 border-b md:border-b-0">
+              <p className="text-primary font-bold text-[14px] leading-relaxed">
                 Expert advice and support for point-in-time activities to support your business needs
               </p>
-              <p className="text-primary font-bold text-[15px] pb-6 border-b border-gray-200">
+            </div>
+            <div className="md:px-4 md:border-r border-border-subtle pb-6 md:pb-0 border-b md:border-b-0">
+              <p className="text-primary font-bold text-[14px] leading-relaxed">
                 Complete ownership of financial processes and recurring activities
               </p>
-              <p className="text-primary font-bold text-[15px]">
+            </div>
+            <div className="md:px-4">
+              <p className="text-primary font-bold text-[14px] leading-relaxed">
                 A bouquet of financial activities and processes chosen by you that suits your business needs
               </p>
             </div>
           </div>
-
         </div>
 
       </div>

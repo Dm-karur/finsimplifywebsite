@@ -3,22 +3,17 @@ import finLogo from '../../assets/images/finlogo.png';
 
 export default function HistorySection() {
   const historyData = [
-    {
-      year: '1950',
-      title: 'The Beginning',
-      text: 'Our story begins in 1950, when John Doe founded our third-generation financial planning firm.',
-      image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=2000&auto=format&fit=crop&grayscale=true'
-    },
+
     {
       year: '2004',
       title: 'Expansion & Growth',
-      text: 'By 2004, we expanded our services globally, embracing modern technology to better serve our growing client base.',
+      text: "For more than 30 years, FinSimplify's experience has been built around managing financial processes for businesses across India and the USA.",
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop&grayscale=true'
     },
     {
       year: '2024',
       title: 'A New Era',
-      text: 'Today, we continue our legacy of trust, offering fully integrated wealth management with cutting-edge strategies.',
+      text: 'Our expertise has evolved across transactional finance, accounting, reporting, taxation, financial planning and strategic finance—allowing us to support businesses as their financial requirements become more complex.',
       image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000&auto=format&fit=crop&grayscale=true'
     }
   ];

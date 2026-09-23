@@ -17,29 +17,15 @@ const navigationItems = [
     items: [
       {
         label: "TRANSACTIONAL ACTIVITIES",
-        hasSubmenu: true,
-        subItems: [
-          { label: "Accounts Payable Management", path: "/services/accounts-payable" },
-          { label: "Accounts Receivables Management", path: "/services/accounts-receivable" },
-          { label: "Payroll", path: "/services/payroll-management" }
-        ]
+        path: "/services/transactional-activities"
       },
       {
         label: "DECISION SUPPORT ACTIVITIES",
-        hasSubmenu: true,
-        subItems: [
-          { label: "Financial Accounting & Reporting", path: "/services/accounting-reporting" },
-          { label: "Management reporting", path: "/services/management-reporting" }
-        ]
+        path: "/services/decision-support-activities"
       },
       {
         label: "EXPERT  FUNCTION  ACTIVITIES",
-        hasSubmenu: true,
-        subItems: [
-          { label: "Financial Planning & Analysis", path: "/services/financial-planning" },
-          { label: "Taxes", path: "/services/taxes" },
-          { label: "Consulting CFO Services", path: "/services/consulting-cfo" }
-        ]
+        path: "/services"
       },
       { label: "All Services", path: "/services", isHighlighted: true }
     ]

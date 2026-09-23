@@ -50,8 +50,16 @@ export default function WhyChooseUs() {
                 <circle cx="12" cy="12" r="5" fill="var(--color-primary)" opacity="0.2" />
               </svg>
             </div>
-            <p className="text-base lg:text-[16px] text-text-muted leading-relaxed font-normal">
-              Driven by a relentless focus on "why," we integrate our services to uncover, design, and deliver the most impactful outcomes for you. Instead of relying on predefined processes, we take a hands-on approach—collaborating closely with your teams to craft practical, end-to-end solutions tailored to your needs.
+            <p className="text-base text-black-300 lg:text-[15px] leading-relaxed  text-muted font-normal">
+
+              Finance Support Built Around Your Business
+
+
+              Businesses don't always need the same level of financial support at every stage.
+
+              That's why FinSimplify provides flexible engagement models that can be tailored to your business requirements—from point-in-time activities and individual financial processes to complete finance operations.
+
+              We combine experienced people, customised processes, industry-standard tools and specialist expertise to deliver financial support designed for agility, cost-efficiency and scalability.
             </p>
           </div>
 

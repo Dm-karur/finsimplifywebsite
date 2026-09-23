@@ -7,6 +7,9 @@ import Blog from '../pages/Blog';
 import BlogPost from '../pages/BlogPost';
 import Contact from '../pages/Contact';
 
+// New Submenu Pages
+import TransactionalActivities from '../pages/services/TransactionalActivities';
+import DecisionSupportActivities from '../pages/services/DecisionSupportActivities';
 // Original generic imports (kept in case they are used elsewhere)
 import CfoOperations from '../pages/services/CfoOperations';
 import AccountingCompliance from '../pages/services/AccountingCompliance';
@@ -38,6 +41,9 @@ export default function AppRoutes() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             
+            {/* Main Submenu Routes */}
+            <Route path="/services/transactional-activities" element={<TransactionalActivities />} />
+            <Route path="/services/decision-support-activities" element={<DecisionSupportActivities />} />
             {/* The 8 distinct submenu routes */}
             <Route path="/services/accounts-payable" element={<AccountsPayable />} />
             <Route path="/services/accounts-receivable" element={<AccountsReceivable />} />

@@ -4,8 +4,6 @@ import WhoWeAre from '../components/home/WhoWeAre';
 import ServicesSection from '../components/home/ServicesSection';
 import FinancialProcessesSection from '../components/home/FinancialProcessesSection';
 import ValuesSection from '../components/home/ValuesSection';
-import WhyChooseUs from '../components/home/WhyChooseUs';
-import TeamSection from '../components/home/TeamSection';
 import DeliveryFrameworkSection from '../components/home/DeliveryFrameworkSection';
 import TrustedPartner from '../components/home/TrustedPartner';
 import TestimonialsSection from '../components/home/TestimonialsSection';
@@ -21,8 +19,6 @@ export default function Home() {
       <ServicesSection />
       <FinancialProcessesSection />
       <ValuesSection />
-      <WhyChooseUs />
-      <TeamSection />
       <DeliveryFrameworkSection />
       <TrustedPartner />
       <TestimonialsSection />
